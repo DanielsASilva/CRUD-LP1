@@ -10,7 +10,7 @@ class Funcionario{
     virtual int getCodigo() = 0;
     virtual std::string getNome() = 0;
     virtual std::string getEndereco() = 0;
-    virtual std::string getTelefone();
+    virtual std::string getTelefone() = 0;
     virtual int getDataDia() = 0;
     virtual int getDataMes() = 0;
     virtual int getDataAno() = 0;
