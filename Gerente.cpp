@@ -46,7 +46,7 @@ float Gerente::getSalario(){
     
 }
 
-float Gerente::getAreaSupervisao(){
+std::string Gerente::getAreaSupervisao(){
     
 }
   
