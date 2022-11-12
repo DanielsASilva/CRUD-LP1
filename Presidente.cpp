@@ -94,7 +94,7 @@ void Presidente::setSalario(float salary){
     
 }
 
-void setAreaFormacao(std::string academicWorkfield){
+void setAreaFormacao(std::string academicDegree){
   
 }
 
