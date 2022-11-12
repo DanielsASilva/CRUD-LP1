@@ -7,9 +7,9 @@ class Operario : public Funcionario{
     Operario();
     ~Operario();
 
-    int getCodigo() = 0;
-    std::string getNome() = 0;
-    std::string getEndereco() = 0;
+    int getCodigo();
+    std::string getNome();
+    std::string getEndereco();
     std::string getTelefone();
     int getDataDia();
     int getDataMes();
