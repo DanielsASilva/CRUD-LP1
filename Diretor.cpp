@@ -1,4 +1,4 @@
-#include "Diretor.h"
+
 #include <string>
     
 Diretor::Diretor() : Gerente(){
