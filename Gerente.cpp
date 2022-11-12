@@ -1,5 +1,5 @@
 #include "Gerente.h"
-
+#include <string>
     
 Gerente::Gerente() : Funcionario(){
         
@@ -45,6 +45,10 @@ int Gerente::getTipoFuncionario(){
 float Gerente::getSalario(){
     
 }
+
+float Gerente::getAreaSupervisao(){
+    
+}
   
 void Gerente::setCodigo(int code){
     
@@ -79,5 +83,9 @@ void Gerente::setTipoFuncionario(int functionaryType){
 }
     
 void Gerente::setSalario(float salary){
+    
+}
+
+void Gerente::setAreaSupervisao(std::string supervisionArea){
     
 }
