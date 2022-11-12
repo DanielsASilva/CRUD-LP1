@@ -18,7 +18,7 @@ class Diretor : public Gerente{
     int getTipoFuncionario();
     float getSalario();
     std::string getAreaSupervisao();
-    setd::string getAreaFormacao();
+    std::string getAreaFormacao();
   
     void setCodigo(int code);
     void setNome(std::string name);
