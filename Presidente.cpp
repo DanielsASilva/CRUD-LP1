@@ -46,7 +46,7 @@ float Presidente::getSalario(){
     
 }
 
-float Presidente::getAreaSupervisao(){
+std::string Presidente::getAreaSupervisao(){
     
 }
 
