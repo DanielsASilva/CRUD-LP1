@@ -1,34 +1,83 @@
-    #include "Operador.h"
+#include "Operador.h"
 
     
-    Operador::Operador() : Funcionario(){
+Operador::Operador() : Funcionario(){
         
-    }
+}
 
-    Operador::~Operador(){
+Operador::~Operador(){
     
-    }
+}
 
-    int Operadopr::getCodigo(){
+int Operador::getCodigo(){
         
-    }
+}
 
        
-    std::string getNome();
-    std::string getEndereco();
-    std::string getTelefone();
-    int getDataDia();
-    int getDataMes();
-    int getDataAno();
-    int getTipoFuncionario();
-    float getSalario();
+std::string Operador::getNome(){
+    
+}
+    
+std::string Operador::getEndereco(){
+    
+}
+
+std::string Operador::getTelefone(){
+    
+}
+    
+int Operador::getDataDia(){
+    
+}
+    
+int Opeador::getDataMes(){
+    
+}
+    
+int Operador::getDataAno(){
+    
+}
+
+int Operador::getTipoFuncionario(){
+    
+}
+    
+float Operador::getSalario(){
+    
+}
   
-    void setCodigo(int code);
-    void setNome(std::string name);
-    void setEndereco(float adress);
-    void setTelefone(int phone);
-    void setDataDia(int day);
-    void setDataMes(int month);
-    void setDataAno(int year);
-    void setTipoFuncionario(int functionaryType);
-    void setSalario(float salary);
+void Operador::setCodigo(int code){
+    
+}
+
+void Operador::setNome(std::string name){
+    
+}
+
+void Operador::setEndereco(float adress){
+    
+}
+
+void Operador::setTelefone(int phone){
+    
+}
+
+void Operador::setDataDia(int day){
+    
+}
+
+void Operador::setDataMes(int month){
+    
+}
+
+void Operador::setDataAno(int year){
+    
+}
+
+void Operador::setTipoFuncionario(int functionaryType){
+    
+}
+    
+void Operador::setSalario(float salary){
+    
+}
