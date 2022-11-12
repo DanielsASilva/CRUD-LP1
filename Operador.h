@@ -5,8 +5,8 @@
 
 class Operador : public Funcionario{
   public:
-    Operario();
-    ~Operario();
+    Operador();
+    ~Operador();
 
     int getCodigo();
     std::string getNome();
