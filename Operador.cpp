@@ -30,7 +30,7 @@ int Operador::getDataDia(){
     
 }
     
-int Opeador::getDataMes(){
+int Operador::getDataMes(){
     
 }
     
