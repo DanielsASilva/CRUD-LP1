@@ -1,9 +1,19 @@
+    #include "Operador.h"
+
     
+    Operador::Operador() : Funcionario(){
+        
+    }
 
-    Operario();
-    ~Operario();
+    Operador::~Operador(){
+    
+    }
 
-    int getCodigo();
+    int Operadopr::getCodigo(){
+        
+    }
+
+       
     std::string getNome();
     std::string getEndereco();
     std::string getTelefone();
