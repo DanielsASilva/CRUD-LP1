@@ -1,5 +1,5 @@
 #include "Operador.h"
-
+#include <string>
     
 Operador::Operador() : Funcionario(){
         
