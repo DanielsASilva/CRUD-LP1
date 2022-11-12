@@ -1,9 +1,9 @@
-#ifndef OPERARIO_H
-#define OPERARIO_H
+#ifndef OPERADOR_H
+#define OPERADOR_H
 #include <string>
 #include "Funcionario.h"
 
-class Operario : public Funcionario{
+class Operador : public Funcionario{
   public:
     Operario();
     ~Operario();
