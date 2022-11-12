@@ -17,6 +17,7 @@ class Presidente : public Funcionario{
     int getDataAno();
     int getTipoFuncionario();
     float getSalario();
+    std::string getAreaSupervisao();
     std::string getAreaFormacao();
   
     void setCodigo(int code);
@@ -28,6 +29,7 @@ class Presidente : public Funcionario{
     void setDataAno(int year);
     void setTipoFuncionario(int functionaryType);
     void setSalario(float salary);
+    void setAreaSupervisao(std::string supervisionArea);
     void setAreaFormacao(std::string academicDegree);
   
   protected:
