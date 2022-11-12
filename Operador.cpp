@@ -51,7 +51,7 @@ void Operador::setCodigo(int code){
 }
 
 void Operador::setNome(std::string name){
-    this->nome = name;
+    nome = name;
 }
 
 void Operador::setEndereco(float adress){
