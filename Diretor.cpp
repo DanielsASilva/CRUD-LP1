@@ -5,9 +5,6 @@ Diretor::Diretor() : Gerente(){
         
 }
 
-Diretor::~Diretor(){
-    
-}
 
 int Diretor::getCodigo(){
     return codigo;  
