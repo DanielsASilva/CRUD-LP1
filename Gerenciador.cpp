@@ -1,1 +1,1 @@
-
+#include "Gerenciador.h"
