@@ -9,7 +9,7 @@ int main(){
   Gerenciador gerenciador;
   
   cout << "SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS" << endl;
-  cout << "1. Adicionar Funcionário\n" <<
+  cout << "1. Adicionar Funcionário\n"
   << "2. Editar Funcionário\n"
   << "3. Excluir Funcionário\n"
   << "4. Exibir Funcionário\n"
