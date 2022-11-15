@@ -15,6 +15,7 @@ class Funcionario{
     virtual int getDataMes() = 0;
     virtual int getDataAno() = 0;
     virtual int getTipoFuncionario() = 0;
+    virtual std::string getPosicao() = 0;
     virtual float getSalario() = 0;
   
     virtual void setCodigo(int code) = 0;
@@ -25,10 +26,12 @@ class Funcionario{
     virtual void setDataMes(int month) = 0;
     virtual void setDataAno(int year) = 0;
     virtual void setTipoFuncionario(int functionaryType) = 0;
+    virtual void setPosicao(std::string position);
     virtual void setSalario(float salary) = 0;
   
   protected:
     int codigo;
+    std::string posicao;
     std::string nome;
     std::string endereco;
     std::string telefone;
