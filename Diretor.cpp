@@ -5,7 +5,7 @@ Diretor::Diretor() : Gerente(){
         
 }
 
-Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao, std::string areaFormacao){
+Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao, std::string areaFormacao){
     this->codigo = codigoFuncionario;
     this->nome = nome;
     this->endereco = endereco;
@@ -13,6 +13,7 @@ Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, 
     this->dataMes = mes;
     this->dataAno = ano;
     this->posicao = posicao;
+    this->telefone = telefone;
     this->salario = salario;
     this->areaSupervisao = areaSupervisao;
     this->areaFormacao = areaFormacao;
@@ -52,6 +53,10 @@ int Diretor::getTipoFuncionario(){
     return tipoFuncionario;
 }
     
+std::string Diretor::getPosicao(){
+    return posicao;   
+}
+
 float Diretor::getSalario(){
     return salario;
 }
@@ -96,6 +101,10 @@ void Diretor::setTipoFuncionario(int functionaryType){
     tipoFuncionario = functionaryType;
 }
     
+void Diretor::setPosicao(std::string position){
+    posicao = position;
+}
+
 void Diretor::setSalario(float salary){
     salario = salary;
 }
