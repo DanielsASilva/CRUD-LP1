@@ -5,6 +5,19 @@ Presidente::Presidente() : Funcionario(){
         
 }
 
+Presidente::Presidente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaFormacao, std::string areaAcademicaMax){
+    this->codigo = codigoFuncionario;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->posicao = posicao;
+    this->salario = salario;
+    this->areaFormacao = areaFormacao;
+    this->areaAcademicaMax = areaAcademicaMax;
+}
+
 Presidente::~Presidente(){
     
 }
