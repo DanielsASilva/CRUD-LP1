@@ -37,6 +37,7 @@ class Gerente : public Funcionario{
     std::string nome;
     std::string endereco;
     std::string telefone;
+    std::string posicao;
     int dataDia;
     int dataMes;
     int dataAno;
