@@ -30,7 +30,7 @@ class Diretor : public Gerente{
     void setDataMes(int month);
     void setDataAno(int year);
     void setTipoFuncionario(int functionaryType);
-    void setPosicao(std::string posicao);
+    void setPosicao(std::string position);
     void setSalario(float salary);
     void setAreaSupervisao(std::string supervisionArea);
     void setAreaFormacao(std::string academicWorkfield);
