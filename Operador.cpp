@@ -12,7 +12,7 @@ Operador::Operador(int codigoFuncionario, std::string nome, std::string endereco
     this->dataDia = dia;
     this->dataMes = mes;
     this->dataAno = ano;
-    this->designacao = designacao;
+    this->posicao = posicao;
     this->salario = salario;
 }
 
