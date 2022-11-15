@@ -6,6 +6,7 @@
 class Presidente : public Funcionario{
   public:
     Presidente();
+    Presidente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaFormacao, std::string areaAcademicaMax);
     ~Presidente();
 
     int getCodigo();
@@ -37,6 +38,7 @@ class Presidente : public Funcionario{
     std::string nome;
     std::string endereco;
     std::string telefone;
+    std::string posicao;
     int dataDia;
     int dataMes;
     int dataAno;
