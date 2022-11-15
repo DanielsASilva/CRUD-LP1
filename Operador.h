@@ -6,7 +6,7 @@
 class Operador : public Funcionario{
   public:
     Operador();
-    Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario);
+    Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string telefone, std::string posicao, float salario);
     ~Operador();
 
     int getCodigo();
@@ -17,6 +17,7 @@ class Operador : public Funcionario{
     int getDataMes();
     int getDataAno();
     int getTipoFuncionario();
+    int getPosicao();
     float getSalario();
   
     void setCodigo(int code);
@@ -26,6 +27,7 @@ class Operador : public Funcionario{
     void setDataDia(int day);
     void setDataMes(int month);
     void setDataAno(int year);
+    void setPosicao(std::string position);
     void setTipoFuncionario(int functionaryType);
     void setSalario(float salary);
   
