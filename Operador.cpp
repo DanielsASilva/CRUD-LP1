@@ -5,6 +5,17 @@ Operador::Operador() : Funcionario(){
         
 }
 
+Operador::Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario){
+    this->codigo = codigoFuncionario;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->designacao = designacao;
+    this->salario = salario;
+}
+
 Operador::~Operador(){
     
 }
