@@ -5,11 +5,14 @@
 #include "Gerente.h"
 #include "Diretor.h"
 #include "Presidente.h"
+#include <vector>
 
 class Gerenciador{
   public:
   Gerenciador();
   ~Gerenciador();
+  
+  vector<Funcionario*> getVectorFuncionarios();
   
   int adicionarFuncionario();
   int editarFuncionario();
@@ -21,7 +24,7 @@ class Gerenciador{
   protected:
   
   private:
-  
+  vector<Funcionario*> listaFuncionarios;
 }
 
 #endif
