@@ -6,6 +6,7 @@
 class Operador : public Funcionario{
   public:
     Operador();
+    Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario);
     ~Operador();
 
     int getCodigo();
