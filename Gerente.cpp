@@ -5,6 +5,18 @@ Gerente::Gerente() : Funcionario(){
         
 }
 
+Gerente::Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao){
+    this->codigo = codigo;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->posicao = posicao;
+    this->salario = salario;
+    this->areaSupervisao = areaSupervisao;
+ }
+
 Gerente::~Gerente(){
     
 }
