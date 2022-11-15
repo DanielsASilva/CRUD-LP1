@@ -6,6 +6,7 @@
 class Diretor : public Gerente{
   public:
     Diretor();
+    Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao, std::string areaFormacao);
     ~Direito();
 
     int getCodigo();
@@ -39,6 +40,7 @@ class Diretor : public Gerente{
     std::string nome;
     std::string endereco;
     std::string telefone;
+    std::string posicao;
     int dataDia;
     int dataMes;
     int dataAno;
