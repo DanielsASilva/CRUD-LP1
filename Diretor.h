@@ -6,7 +6,7 @@
 class Diretor : public Gerente{
   public:
     Diretor();
-    Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao, std::string areaFormacao);
+    Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao, std::string areaFormacao);
     ~Direito();
 
     int getCodigo();
@@ -17,6 +17,7 @@ class Diretor : public Gerente{
     int getDataMes();
     int getDataAno();
     int getTipoFuncionario();
+    std::string getPosicao();
     float getSalario();
     std::string getAreaSupervisao();
     std::string getAreaFormacao();
@@ -29,6 +30,7 @@ class Diretor : public Gerente{
     void setDataMes(int month);
     void setDataAno(int year);
     void setTipoFuncionario(int functionaryType);
+    void setPosicao(std::string posicao);
     void setSalario(float salary);
     void setAreaSupervisao(std::string supervisionArea);
     void setAreaFormacao(std::string academicWorkfield);
