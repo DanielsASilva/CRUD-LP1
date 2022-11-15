@@ -5,7 +5,7 @@ Gerente::Gerente() : Funcionario(){
         
 }
 
-Gerente::Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao){
+Gerente::Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao){
     this->codigo = codigoFuncionario;
     this->nome = nome;
     this->endereco = endereco;
@@ -13,6 +13,7 @@ Gerente::Gerente(int codigoFuncionario, std::string nome, std::string endereco, 
     this->dataMes = mes;
     this->dataAno = ano;
     this->posicao = posicao;
+    this->telefone = telefone;
     this->salario = salario;
     this->areaSupervisao = areaSupervisao;
  }
@@ -53,7 +54,11 @@ int Gerente::getDataAno(){
 int Gerente::getTipoFuncionario(){
     return tipoFuncionario;
 }
-    
+
+std::string Gerente::getPosicao(){
+    return posicao;   
+}
+
 float Gerente::getSalario(){
     return tipoSalario;
 }
@@ -93,7 +98,11 @@ void Gerente::setDataAno(int year){
 void Gerente::setTipoFuncionario(int functionaryType){
     tipoFuncionario = functionaryType;
 }
-    
+
+void Gerente::setPosicao(std::string position){
+    posicao = position;   
+}
+
 void Gerente::setSalario(float salary){
     salario = salary;
 }
