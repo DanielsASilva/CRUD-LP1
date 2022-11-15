@@ -6,7 +6,7 @@
 class Gerente : public Funcionario{
   public:
     Gerente();
-    Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao);
+    Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao);
     ~Gerente();
 
     int getCodigo();
@@ -17,6 +17,7 @@ class Gerente : public Funcionario{
     int getDataMes();
     int getDataAno();
     int getTipoFuncionario();
+    std::string getPosicao();
     float getSalario();
     std::string getAreaSupervisao();
   
@@ -28,6 +29,7 @@ class Gerente : public Funcionario{
     void setDataMes(int month);
     void setDataAno(int year);
     void setTipoFuncionario(int functionaryType);
+    void getPosicao(int position);
     void setSalario(float salary);
     void setAreaSupervisao(std::string areaSupervisao);
   
