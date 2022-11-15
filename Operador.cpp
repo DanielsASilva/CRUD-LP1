@@ -12,6 +12,7 @@ Operador::Operador(int codigoFuncionario, std::string nome, std::string endereco
     this->dataDia = dia;
     this->dataMes = mes;
     this->dataAno = ano;
+    this->telefone = telefone;
     this->posicao = posicao;
     this->salario = salario;
 }
@@ -53,6 +54,10 @@ int Operador::getTipoFuncionario(){
     return tipo;
 }
     
+std::string Operador::getPosicao(){
+    return posicao;   
+}
+
 float Operador::getSalario(){
     return salario;
 }
@@ -89,6 +94,10 @@ void Operador::setTipoFuncionario(int functionaryType){
     tipoFuncionario = functionaryType;
 }
     
+void Operador::setPosicao(std::string position){
+    posicao = position;   
+}
+
 void Operador::setSalario(float salary){
     salario = salary;
 }
