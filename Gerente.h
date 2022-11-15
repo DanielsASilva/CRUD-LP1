@@ -6,6 +6,7 @@
 class Gerente : public Funcionario{
   public:
     Gerente();
+    Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao);
     ~Gerente();
 
     int getCodigo();
