@@ -36,7 +36,7 @@ class Operador : public Funcionario{
     std::string nome;
     std::string endereco;
     std::string telefone;
-    std::string designacao;
+    std::string posicao;
     int dataDia;
     int dataMes;
     int dataAno;
