@@ -5,6 +5,19 @@ Diretor::Diretor() : Gerente(){
         
 }
 
+Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario, std::string areaSupervisao, std::string areaFormacao){
+    this->codigo = codigoFuncionario;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->posicao = posicao;
+    this->salario = salario;
+    this->areaSupervisao = areaSupervisao;
+    this->areaFormacao = areaFormacao;
+}    
+
 
 int Diretor::getCodigo(){
     return codigo;  
