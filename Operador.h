@@ -17,12 +17,15 @@ class Operador : public Funcionario{
     int getDataMes();
     int getDataAno();
     int getTipoFuncionario();
-    int getPosicao();
+    std::string getPosicao();
     float getSalario();
+    std::string getAreaSupervisao();
+    std::string getAreaFormacao();
+    std::string getAreaAcademicaMax();
   
     void setCodigo(int code);
     void setNome(std::string name);
-    void setEndereco(float adress);
+    void setEndereco(std::string adress);
     void setTelefone(int phone);
     void setDataDia(int day);
     void setDataMes(int month);
@@ -30,6 +33,9 @@ class Operador : public Funcionario{
     void setPosicao(std::string position);
     void setTipoFuncionario(int functionaryType);
     void setSalario(float salary);
+    void setAreaSupervisao(std::string supervisionArea);
+    void setAreaFormacao(std::string academicWorkfield);
+    void setAreaAcademicaMax(std::string academicDegree); 
   
   protected:
 
