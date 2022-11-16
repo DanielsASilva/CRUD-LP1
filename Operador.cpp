@@ -5,7 +5,7 @@ Operador::Operador() : Funcionario(){
         
 }
 
-Operador::Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, float salario){
+Operador::Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string telefone ,std::string posicao, float salario){
     this->codigo = codigoFuncionario;
     this->nome = nome;
     this->endereco = endereco;
@@ -39,19 +39,19 @@ std::string Operador::getTelefone(){
 }
     
 int Operador::getDataDia(){
-    return dia;
+    return dataDia;
 }
     
 int Operador::getDataMes(){
-    return mes;
+    return dataMes;
 }
     
 int Operador::getDataAno(){
-    return ano;
+    return dataAno;
 }
 
 int Operador::getTipoFuncionario(){
-    return tipo;
+    return tipoFuncionario;
 }
     
 std::string Operador::getPosicao(){
@@ -70,7 +70,7 @@ void Operador::setNome(std::string name){
     nome = name;
 }
 
-void Operador::setEndereco(float adress){
+void Operador::setEndereco(std::string adress){
     endereco = adress;
 }
 
@@ -79,15 +79,15 @@ void Operador::setTelefone(int phone){
 }
 
 void Operador::setDataDia(int day){
-    dia = day;
+    dataDia = day;
 }
 
 void Operador::setDataMes(int month){
-    mes = month;
+    dataMes = month;
 }
 
 void Operador::setDataAno(int year){
-    ano = year;
+    dataAno = year;
 }
 
 void Operador::setTipoFuncionario(int functionaryType){
