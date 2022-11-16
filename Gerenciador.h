@@ -1,4 +1,4 @@
-#ifend GERENCIADOR_H
+#ifndef GERENCIADOR_H
 #define GERENCIADOR_H
 #include "Funcionario.h"
 #include "Operador.h"
@@ -12,7 +12,7 @@ class Gerenciador{
   Gerenciador();
   ~Gerenciador();
   
-  vector<Funcionario*> getVectorFuncionarios();
+  std::vector<Funcionario*> getVectorFuncionarios();
   
   int adicionarFuncionario();
   int editarFuncionario();
@@ -24,7 +24,7 @@ class Gerenciador{
   protected:
   
   private:
-  vector<Funcionario*> listaFuncionarios;
-}
+  std::vector<Funcionario*> vectorFuncionarios;
+};
 
 #endif
