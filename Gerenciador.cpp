@@ -13,6 +13,8 @@ Gerenciador::~Gerenciador(){
   
 }
 
+// Para cadastrar um novo funcionário, o cargo é solicitado e em seguida as informações do tipo nome, endereço e data de ingresso, entre outras, são lidas
+//pelo programa e armazenadas 
 int Gerenciador::adicionarFuncionario(){
     int codigoFuncionario, dia, mes, ano;
     string nome, endereco, telefone, areaSupervisao, areaFormacao, areaAcademicaMax;
@@ -57,6 +59,8 @@ int Gerenciador::adicionarFuncionario(){
     cin >> salario;
     cin.ignore();
     
+  // A seguir, os cargos "Gerente", "Diretor" e "Presidente" recebem adições específicas relacionadas às suas funções. Os dois primeiros 
+  //recebem a área de supervisão, os dois últimos recebem área de formação e "Presidente" recebe a formação academica
     switch(tipo){
         case 1:
         vectorFuncionarios.push_back(new Operador(codigoFuncionario, nome, endereco, dia, mes, ano, "Operador", telefone, salario));
@@ -92,6 +96,7 @@ int Gerenciador::adicionarFuncionario(){
     
     fstream fs;
     
+  // Arquivo é aberto e as informações gerais previamente cadastradas são adicionadas
     stream.open("./listaFuncionario.txt", fstream::out);
     if(! stream.is_open()){
       cout << "Erro ao abrir o .txt" << endl; 
@@ -108,6 +113,7 @@ int Gerenciador::adicionarFuncionario(){
       stream << listaFuncionario.at(c)->getTelefone() << endl;
       stream << listaFuncionario.at(c)->getSalario() << endl;
       
+      // Em seguida, as informações específicas por cargo são adicionadas
       switch(listaFuncionarios.at(c)->getTipo()){
         case 1:
           break;
@@ -135,6 +141,7 @@ int Gerenciador::editarFuncionario(){
   cin >> codigo;
   cin.ignore();
   
+  // Com o código respectivo ao funcionário em questão, as informações que o usuário pretende editar são reescritas e atualizadas 
   while(1){
     for(int c = 0; c < vectorFuncionarios.size; c++){
        if(listaFuncionarios.at(c)->getCodigo() == codigo){
@@ -148,6 +155,8 @@ int Gerenciador::editarFuncionario(){
       break; 
     }  
   }
+  
+  //
   cout << "Editando o funcionário " << codigo << ".\n"
   << "1. Código: " << endl
   << "2. Dia de ingresso: " << endl
@@ -160,6 +169,7 @@ int Gerenciador::editarFuncionario(){
   cin >> opt;
   cin.ignore();
   
+  // Para cada caso, um dado particular é lido e este passa a ser o dado atual, significando que tal informação foi editada
   switch(opt){
     case 1:
       cout << "Insira o novo código: ";
@@ -228,6 +238,7 @@ int Gerenciador::excluirFuncionario(){
   
 }
 
+// Um funcionário específico terá seus dados gerais listados em ordem
 int Gerenciador::exibirFuncionario(){
   for(int c = 0; c < vectorFuncionarios.size(); c++){
     cout << "\nCódigo do funcionário: "<< listaFuncionarios.at(c)->getCodigo() << endl
@@ -238,6 +249,7 @@ int Gerenciador::exibirFuncionario(){
     << "Posição na empresa: " << listaFuncionarios.at(c)->getPosicao() << endl
     << "Salario: " << listaFuncionarios.at(c)->getSalario() << endl;
     
+    // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
     switch(listaFuncionarios.at(c)->getTipo()){
       case 1:
         break;
