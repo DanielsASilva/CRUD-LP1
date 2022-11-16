@@ -19,12 +19,13 @@ class Presidente : public Funcionario{
     int getTipoFuncionario();
     std::string getPosicao();
     float getSalario();
-    std::string getAreaSupervisao();
+    std::string getAreaSupervisao();    
+    std::string getAreaAcademicaMax();
     std::string getAreaFormacao();
   
     void setCodigo(int code);
     void setNome(std::string name);
-    void setEndereco(float adress);
+    void setEndereco(std::string adress);
     void setTelefone(int phone);
     void setDataDia(int day);
     void setDataMes(int month);
@@ -32,8 +33,9 @@ class Presidente : public Funcionario{
     void setTipoFuncionario(int functionaryType);
     void setPosicao(std::string position);
     void setSalario(float salary);
-    void setAreaSupervisao(std::string supervisionArea);
-    void setAreaFormacao(std::string academicDegree);
+    void setAreaSupervisao(std::string supervisionArea);    
+    void setAreaAcademicaMax(std::string academiDegree);
+    void setAreaFormacao(std::string academicWorkfield);
   
   protected:
     int codigo;
