@@ -41,15 +41,15 @@ std::string Presidente::getTelefone(){
 }
     
 int Presidente::getDataDia(){
-    return dia;
+    return dataDia;
 }
     
 int Presidente::getDataMes(){
-    return mes;
+    return dataMes;
 }
     
 int Presidente::getDataAno(){
-    return ano;
+    return dataAno;
 }
 
 int Presidente::getTipoFuncionario(){
@@ -80,7 +80,7 @@ void Presidente::setNome(std::string name){
     nome = name;
 }
 
-void Presidente::setEndereco(float adress){
+void Presidente::setEndereco(std::string adress){
     endereco = adress;
 }
 
@@ -89,15 +89,15 @@ void Presidente::setTelefone(int phone){
 }
 
 void Presidente::setDataDia(int day){
-    dia = day;
+    dataDia = day;
 }
 
 void Presidente::setDataMes(int month){
-    mes = month;
+    dataMes = month;
 }
 
 void Presidente::setDataAno(int year){
-    ano = year;
+    dataAno = year;
 }
 
 void Presidente::setTipoFuncionario(int functionaryType){
