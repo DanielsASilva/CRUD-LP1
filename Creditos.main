@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+        cout << "Estilo 1: \n\n";
+        cout << "Direção e Produção:          Daniel Silva     (C/C++/Python)\n";
+        cout << "Distribuição e Logística:    André Luís Teles (C/C++)\n";
+        cout << "Refências e Fontes:          Antônio Augusto  (C/C++)\n\n\n";
+        
+        cout << "Estilo 2: \n\n";
+        cout << "Funcionalidade:          Daniel Silva\n";
+        cout << "Organização e Design:    André Luís Teles\n";
+        cout << "Refências e Fontes:      Antônio Augusto\n\n\n";
+        
+        cout << "Esilo 3: \n\n";
+        cout << "               Direção e Produção\n";
+        cout << "                  Daniel Silva\n\n ";
+        cout << "            Distribuição e Logística\n";
+        cout << "                 André Luís Teles\n\n";
+        cout << "               Refências e Fontes\n";
+        cout << "                Antônio  Augusto\n\n\n";
+        
+        cout << "Esilo 4: \n\n";
+        cout << "                     ELENCO\n\n";
+        cout << "                  Daniel Silva\n";
+        cout << "                André Luís Teles\n";
+        cout << "                Antonio  Augusto\n\n\n";
+        
+    
+    
+    
+
+    return 0;
+}
