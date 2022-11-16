@@ -38,15 +38,15 @@ std::string Diretor::getTelefone(){
 }
     
 int Diretor::getDataDia(){
-    return dia;
+    return dataDia;
 }
     
 int Diretor::getDataMes(){
-    return mes;
+    return dataMes;
 }
     
 int Diretor::getDataAno(){
-    return ano;
+    return dataAno;
 }
 
 int Diretor::getTipoFuncionario(){
@@ -61,7 +61,7 @@ float Diretor::getSalario(){
     return salario;
 }
 
-float Diretor::getAreaSupervisao(){
+std::string Diretor::getAreaSupervisao(){
     return areaSupervisao;
 }
 
@@ -77,7 +77,7 @@ void Diretor::setNome(std::string name){
     nome = name;
 }
 
-void Diretor::setEndereco(float adress){
+void Diretor::setEndereco(std::string adress){
     endereco = adress;
 }
 
@@ -86,15 +86,15 @@ void Diretor::setTelefone(int phone){
 }
 
 void Diretor::setDataDia(int day){
-    dia = day;
+    dataDia = day;
 }
 
 void Diretor::setDataMes(int month){
-    mes = month;
+    dataMes = month;
 }
 
 void Diretor::setDataAno(int year){
-    ano = year;
+    dataAno = year;
 }
 
 void Diretor::setTipoFuncionario(int functionaryType){
@@ -114,5 +114,5 @@ void Diretor::setAreaSupervisao(std::string supervisionArea){
 }
 
 void Diretor::setAreaFormacao(std::string academicWorkfield){
-    areaFormacao = academicWorkField;
+    areaFormacao = academicWorkfield;
 }
