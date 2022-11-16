@@ -40,15 +40,15 @@ std::string Gerente::getTelefone(){
 }
     
 int Gerente::getDataDia(){
-    return dia;
+    return dataDia;
 }
     
 int Gerente::getDataMes(){
-    return mes;
+    return dataMes;
 }
     
 int Gerente::getDataAno(){
-    return ano;
+    return dataAno;
 }
 
 int Gerente::getTipoFuncionario(){
@@ -60,7 +60,7 @@ std::string Gerente::getPosicao(){
 }
 
 float Gerente::getSalario(){
-    return tipoSalario;
+    return salario;
 }
 
 std::string Gerente::getAreaSupervisao(){
@@ -75,24 +75,24 @@ void Gerente::setNome(std::string name){
     nome = name;
 }
 
-void Gerente::setEndereco(float adress){
+void Gerente::setEndereco(std::string adress){
     endereco = adress;
 }
 
 void Gerente::setTelefone(int phone){
-    telefone = fone;
+    telefone = phone;
 }
 
 void Gerente::setDataDia(int day){
-    dia = day;
+    dataDia = day;
 }
 
 void Gerente::setDataMes(int month){
-    mes = month;
+    dataMes = month;
 }
 
 void Gerente::setDataAno(int year){
-    ano = year;
+    dataAno = year;
 }
 
 void Gerente::setTipoFuncionario(int functionaryType){
