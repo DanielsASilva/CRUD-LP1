@@ -7,6 +7,8 @@ class Funcionario{
     Funcionario();
     ~Funcionario();
 
+  // Classe mãe, escrita como virtual puro. Aqui, as informações gerais dos funcionários são instanciadas e seus valores são
+  //inicializados como zero uam vez que não estão sendo implementados no .cpp
     virtual int getCodigo() = 0;
     virtual std::string getNome() = 0;
     virtual std::string getEndereco() = 0;
@@ -29,6 +31,8 @@ class Funcionario{
     virtual void setPosicao(std::string position);
     virtual void setSalario(float salary) = 0;
   
+  // Como atributos protegidos, foi preferível tratar a data como valores ineiros separados
+  //ao invés de um string pois isso evita a necessidade de uso das "/" para separá-los
   protected:
     int codigo;
     std::string posicao;
