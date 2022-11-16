@@ -20,18 +20,22 @@ class Gerente : public Funcionario{
     std::string getPosicao();
     float getSalario();
     std::string getAreaSupervisao();
+    std::string getAreaFormacao();
+    std::string getAreaAcademicaMax();
   
     void setCodigo(int code);
     void setNome(std::string name);
-    void setEndereco(float adress);
+    void setEndereco(std::string adress);
     void setTelefone(int phone);
     void setDataDia(int day);
     void setDataMes(int month);
     void setDataAno(int year);
     void setTipoFuncionario(int functionaryType);
-    void getPosicao(int position);
+    void setPosicao(std::string position);
     void setSalario(float salary);
-    void setAreaSupervisao(std::string areaSupervisao);
+    void setAreaSupervisao(std::string supervisionArea);
+    void setAreaFormacao(std::string academicWorkfield);
+    void setAreaAcademicaMax(std::string academicDegree); 
   
   protected:
 
