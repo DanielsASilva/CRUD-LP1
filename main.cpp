@@ -1,44 +1,56 @@
-#include <iostream>
+#ifndef GERENTE_H
+#define GERENTE_H
 #include <string>
+#include "Funcionario.h"
 
-using namespace std;
+class Gerente : public Funcionario{
+  public:
+    Gerente();
+    Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao);
+    ~Gerente();
 
-int main(){
-  int opcao;
+    int getCodigo();
+    std::string getNome();
+    std::string getEndereco();
+    std::string getTelefone();
+    int getDataDia();
+    int getDataMes();
+    int getDataAno();
+    int getTipoFuncionario();
+    std::string getPosicao();
+    float getSalario();
+    std::string getAreaSupervisao();
+    std::string getAreaFormacao();
+    std::string getAreaAcademicaMax();
   
-  Gerenciador gerenciador;
+    void setCodigo(int code);
+    void setNome(std::string name);
+    void setEndereco(std::string adress);
+    void setTelefone(int phone);
+    void setDataDia(int day);
+    void setDataMes(int month);
+    void setDataAno(int year);
+    void setTipoFuncionario(int functionaryType);
+    void setPosicao(std::string position);
+    void setSalario(float salary);
+    void setAreaSupervisao(std::string supervisionArea);
+    void setAreaFormacao(std::string academicWorkfield);
+    void setAreaAcademicaMax(std::string academicDegree); 
   
-  cout << "SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS" << endl;
-  cout << "1. Adicionar Funcionário\n"
-  << "2. Editar Funcionário\n"
-  << "3. Excluir Funcionário\n"
-  << "4. Exibir Funcionário\n"
-  << "5. Exibir Lista\n"
-  << "6. Exibir Lista por Tipo\n";
+  protected:
+
+  private:
+    int codigo;
+    std::string nome;
+    std::string endereco;
+    std::string telefone;
+    std::string posicao;
+    int dataDia;
+    int dataMes;
+    int dataAno;
+    int tipoFuncionario;
   
-  cin >> opcao;
-  cin.ignore();
-  
-  switch(opcao){
-    case 1:
-      gerenciador.adicionarFuncionario();
-      break;
-    case 2:
-      gerenciador.editarFuncionario();
-      break;
-    case 3:
-      gerenciador.excluirFuncionario();
-      break;
-    case 4:
-      gerenciador.exibirFuncionario();
-      break;
-    case 5:
-      gerenciador.exibirLista();
-      break;
-    case 6;
-      gerenciador.exibirListaTipo();
-      break;
-  }
-  
-  return 0;
-}
+    std::string areaSupervisao;
+};
+
+#endif
