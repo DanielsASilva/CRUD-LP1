@@ -1,8 +1,9 @@
-#ifndef DIREITO_H
+#ifndef DIREITO_H //não era pra ser DIRETOR_H?
 #define DIREITO_H
 #include <string>
 #include "Gerente.h"
 
+//.h padrão com "get"s e "set"s. Na classe diretor, os dados Area de Supervisao e Area de Formacao estão inclusos
 class Diretor : public Gerente{
   public:
     Diretor();
@@ -35,7 +36,8 @@ class Diretor : public Gerente{
     void setSalario(float salary);
     void setAreaSupervisao(std::string supervisionArea);
     void setAreaFormacao(std::string academicWorkfield);
-    void setAreaAcademicaMax(std::string academicDegree); 
+  
+    //void setAreaAcademicaMax(std::string academicDegree); 
 
   protected:
 
