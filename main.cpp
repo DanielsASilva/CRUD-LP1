@@ -1,5 +1,11 @@
 #include <iostream>
 #include <string>
+#include "Funcionario.h"
+#include "Diretor.h"
+#include "Operador.h"
+#include "Gerente.h"
+#include "Presidente.h"
+#include "Gerenciador.h"
 
 using namespace std;
 
@@ -35,7 +41,7 @@ int main(){
     case 5:
       gerenciador.exibirLista();
       break;
-    case 6;
+    case 6:
       gerenciador.exibirListaTipo();
       break;
   }
