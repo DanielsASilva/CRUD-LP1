@@ -1,0 +1,1058 @@
+
+
+
+#ifndef FUNCIONARIO_H
+#define FUNCIONARIO_H
+#include <string>
+
+class Funcionario{
+  public:
+    Funcionario();
+    ~Funcionario();
+
+    virtual int getCodigo() = 0;
+    virtual std::string getNome() = 0;
+    virtual std::string getEndereco() = 0;
+    virtual std::string getTelefone() = 0;
+    virtual int getDataDia() = 0;
+    virtual int getDataMes() = 0;
+    virtual int getDataAno() = 0;
+    virtual int getTipoFuncionario() = 0;
+    virtual std::string getPosicao() = 0;
+    virtual float getSalario() = 0;
+    virtual std::string getAreaSupervisao() = 0;
+    virtual std::string getAreaFormacao() = 0;
+    virtual std::string getAreaAcademicaMax() = 0;
+  
+    virtual void setCodigo(int code) = 0;
+    virtual void setNome(std::string name) = 0;
+    virtual void setEndereco(std::string adress) = 0;
+    virtual void setTelefone(int phone) = 0;
+    virtual void setDataDia(int day) = 0;
+    virtual void setDataMes(int month) = 0;
+    virtual void setDataAno(int year) = 0;
+    virtual void setTipoFuncionario(int functionaryType) = 0;
+    virtual void setPosicao(std::string position);
+    virtual void setSalario(float salary) = 0;
+    virtual void setAreaSupervisao(std::string supervisionArea) = 0;
+    virtual void setAreaFormacao(std::string academicWorkfield) = 0;
+    virtual void setAreaAcademicaMax(std::string academicDegree) = 0;
+  
+  protected:
+    int codigo;
+    std::string posicao;
+    std::string nome;
+    std::string endereco;
+    std::string telefone;
+    int dataDia;
+    int dataMes;
+    int dataAno;
+    int tipoFuncionario;
+    float salario;
+    std::string areaSupervisao;
+    std::string areaFormacao;
+    std::string areaAcademicaMax;
+  private:
+
+};
+
+#endif
+
+
+#ifndef PRESIDENTE_H
+#define PRESIDENTE_H
+#include <string>
+
+class Presidente : public Funcionario{
+  public:
+    Presidente();
+    Presidente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string telefone, std::string posicao, float salario, std::string areaFormacao, std::string areaAcademicaMax);
+    ~Presidente();
+
+    int getCodigo();
+    std::string getNome();
+    std::string getEndereco();
+    std::string getTelefone();
+    int getDataDia();
+    int getDataMes();
+    int getDataAno();
+    int getTipoFuncionario();
+    std::string getPosicao();
+    float getSalario();
+    std::string getAreaSupervisao();    
+    std::string getAreaAcademicaMax();
+    std::string getAreaFormacao();
+  
+    void setCodigo(int code);
+    void setNome(std::string name);
+    void setEndereco(std::string adress);
+    void setTelefone(int phone);
+    void setDataDia(int day);
+    void setDataMes(int month);
+    void setDataAno(int year);
+    void setTipoFuncionario(int functionaryType);
+    void setPosicao(std::string position);
+    void setSalario(float salary);
+    void setAreaSupervisao(std::string supervisionArea);    
+    void setAreaAcademicaMax(std::string academiDegree);
+    void setAreaFormacao(std::string academicWorkfield);
+  
+  protected:
+    int codigo;
+    std::string nome;
+    std::string endereco;
+    std::string telefone;
+    std::string posicao;
+    int dataDia;
+    int dataMes;
+    int dataAno;
+    int tipoFuncionario;
+    float salario;
+  
+    std::string areaFormacao;
+  
+    std::string areaAcademicaMax;
+  private:
+
+};
+
+#endif
+
+#ifndef GERENTE_H
+#define GERENTE_H
+#include <string>
+
+
+class Gerente : public Funcionario{
+  public:
+    Gerente();
+    Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao);
+    ~Gerente();
+
+    int getCodigo();
+    std::string getNome();
+    std::string getEndereco();
+    std::string getTelefone();
+    int getDataDia();
+    int getDataMes();
+    int getDataAno();
+    int getTipoFuncionario();
+    std::string getPosicao();
+    float getSalario();
+    std::string getAreaSupervisao();
+    std::string getAreaFormacao();
+    std::string getAreaAcademicaMax();
+  
+    void setCodigo(int code);
+    void setNome(std::string name);
+    void setEndereco(std::string adress);
+    void setTelefone(int phone);
+    void setDataDia(int day);
+    void setDataMes(int month);
+    void setDataAno(int year);
+    void setTipoFuncionario(int functionaryType);
+    void setPosicao(std::string position);
+    void setSalario(float salary);
+    void setAreaSupervisao(std::string supervisionArea);
+    void setAreaFormacao(std::string academicWorkfield);
+    void setAreaAcademicaMax(std::string academicDegree); 
+  
+  protected:
+
+  private:
+    int codigo;
+    std::string nome;
+    std::string endereco;
+    std::string telefone;
+    std::string posicao;
+    int dataDia;
+    int dataMes;
+    int dataAno;
+    int tipoFuncionario;
+  
+    std::string areaSupervisao;
+};
+
+#endif
+
+#ifndef DIREITO_H //não era pra ser DIRETOR_H?
+#define DIREITO_H
+#include <string>
+
+
+//.h padrão com "get"s e "set"s. Na classe diretor, os dados Area de Supervisao e Area de Formacao estão inclusos
+class Diretor : public Gerente{
+  public:
+    Diretor();
+    Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao, std::string areaFormacao);
+    ~Diretor();
+
+    int getCodigo();
+    std::string getNome();
+    std::string getEndereco();
+    std::string getTelefone();
+    int getDataDia();
+    int getDataMes();
+    int getDataAno();
+    int getTipoFuncionario();
+    std::string getPosicao();
+    float getSalario();
+    std::string getAreaSupervisao();
+    std::string getAreaFormacao();
+    std::string getAreaAcademicaMax();
+  
+    void setCodigo(int code);
+    void setNome(std::string name);
+    void setEndereco(std::string adress);
+    void setTelefone(int phone);
+    void setDataDia(int day);
+    void setDataMes(int month);
+    void setDataAno(int year);
+    void setTipoFuncionario(int functionaryType);
+    void setPosicao(std::string position);
+    void setSalario(float salary);
+    void setAreaSupervisao(std::string supervisionArea);
+    void setAreaFormacao(std::string academicWorkfield);
+  
+    //void setAreaAcademicaMax(std::string academicDegree); 
+
+  protected:
+
+  private:
+    int codigo;
+    std::string nome;
+    std::string endereco;
+    std::string telefone;
+    std::string posicao;
+    int dataDia;
+    int dataMes;
+    int dataAno;
+    int tipoFuncionario;
+  
+    std::string areaSupervisao;
+    
+    std::string areaFormacao;
+};
+
+#endif
+
+#ifndef OPERADOR_H
+#define OPERADOR_H
+#include <string>
+
+class Operador : public Funcionario{
+  public:
+    Operador();
+    Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string telefone, std::string posicao, float salario);
+    ~Operador();
+
+    int getCodigo();
+    std::string getNome();
+    std::string getEndereco();
+    std::string getTelefone();
+    int getDataDia();
+    int getDataMes();
+    int getDataAno();
+    int getTipoFuncionario();
+    std::string getPosicao();
+    float getSalario();
+    std::string getAreaSupervisao();
+    std::string getAreaFormacao();
+    std::string getAreaAcademicaMax();
+  
+    void setCodigo(int code);
+    void setNome(std::string name);
+    void setEndereco(std::string adress);
+    void setTelefone(int phone);
+    void setDataDia(int day);
+    void setDataMes(int month);
+    void setDataAno(int year);
+    void setPosicao(std::string position);
+    void setTipoFuncionario(int functionaryType);
+    void setSalario(float salary);
+    void setAreaSupervisao(std::string supervisionArea);
+    void setAreaFormacao(std::string academicWorkfield);
+    void setAreaAcademicaMax(std::string academicDegree); 
+  
+  protected:
+
+  private:
+    int codigo;
+    std::string nome;
+    std::string endereco;
+    std::string telefone;
+    std::string posicao;
+    int dataDia;
+    int dataMes;
+    int dataAno;
+    int tipoFuncionario;
+};
+
+#endif
+
+#ifndef GERENCIADOR_H
+#define GERENCIADOR_H
+#include <vector>
+
+class Gerenciador{
+  public:
+  Gerenciador();
+  ~Gerenciador();
+  
+  std::vector<Funcionario*> getVectorFuncionarios();
+  
+  int adicionarFuncionario();
+  int editarFuncionario();
+  int excluirFuncionario();
+  int exibirFuncionario();
+  int exibirLista();
+  int exibirListaTipo();
+  
+  protected:
+  
+  private:
+  std::vector<Funcionario*> vectorFuncionarios;
+};
+
+#endif
+
+
+Funcionario::Funcionario(){
+ 
+}
+
+Funcionario::~Funcionario(){
+
+}
+    
+Presidente::Presidente() : Funcionario(){
+        
+}
+
+Presidente::Presidente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string telefone, std::string posicao, float salario, std::string areaFormacao, std::string areaAcademicaMax){
+    this->codigo = codigoFuncionario;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->posicao = posicao;
+    this->telefone = telefone;
+    this->salario = salario;
+    this->areaFormacao = areaFormacao;
+    this->areaAcademicaMax = areaAcademicaMax;
+}
+
+Presidente::~Presidente(){
+    
+}
+
+int Presidente::getCodigo(){
+    return codigo;
+}
+
+       
+std::string Presidente::getNome(){
+    return nome;
+}
+    
+std::string Presidente::getEndereco(){
+    return endereco;
+}
+
+std::string Presidente::getTelefone(){
+    return telefone;
+}
+    
+int Presidente::getDataDia(){
+    return dataDia;
+}
+    
+int Presidente::getDataMes(){
+    return dataMes;
+}
+    
+int Presidente::getDataAno(){
+    return dataAno;
+}
+
+int Presidente::getTipoFuncionario(){
+    return tipoFuncionario;
+}
+
+std::string Presidente::getPosicao(){
+    return posicao;   
+}
+
+float Presidente::getSalario(){
+    return salario;
+}
+
+std::string Presidente::getAreaFormacao(){
+    return areaFormacao;
+}
+
+std::string Presidente::getAreaAcademicaMax(){
+    return areaAcademicaMax;
+}
+
+void Presidente::setCodigo(int code){
+    codigo = code;
+}
+
+void Presidente::setNome(std::string name){
+    nome = name;
+}
+
+void Presidente::setEndereco(std::string adress){
+    endereco = adress;
+}
+
+void Presidente::setTelefone(int phone){
+    telefone = phone;
+}
+
+void Presidente::setDataDia(int day){
+    dataDia = day;
+}
+
+void Presidente::setDataMes(int month){
+    dataMes = month;
+}
+
+void Presidente::setDataAno(int year){
+    dataAno = year;
+}
+
+void Presidente::setTipoFuncionario(int functionaryType){
+    tipoFuncionario = functionaryType;
+}
+    
+void Presidente::setPosicao(std::string position){
+    posicao = position;   
+}
+
+void Presidente::setSalario(float salary){
+    salario = salary;
+}
+
+void Presidente::setAreaFormacao(std::string academicWorkfield){
+    areaFormacao = academicWorkfield;
+}
+
+void Presidente::setAreaAcademicaMax(std::string academicDegree){
+    areaAcademicaMax = academicDegree;
+}
+
+#include <string>
+    
+Diretor::Diretor() : Gerente(){
+        
+}
+
+// cpp padrão com "set" e "get", já considerando os dados adicionais da classe Diretor
+Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao, std::string areaFormacao){
+    this->codigo = codigoFuncionario;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->posicao = posicao;
+    this->telefone = telefone;
+    this->salario = salario;
+    this->areaSupervisao = areaSupervisao;
+    this->areaFormacao = areaFormacao;
+}    
+
+
+int Diretor::getCodigo(){
+    return codigo;  
+}
+
+       
+std::string Diretor::getNome(){
+    return nome;
+}
+    
+std::string Diretor::getEndereco(){
+    return endereco;
+}
+
+std::string Diretor::getTelefone(){
+    return telefone;
+}
+    
+int Diretor::getDataDia(){
+    return dataDia;
+}
+    
+int Diretor::getDataMes(){
+    return dataMes;
+}
+    
+int Diretor::getDataAno(){
+    return dataAno;
+}
+
+int Diretor::getTipoFuncionario(){
+    return tipoFuncionario;
+}
+    
+std::string Diretor::getPosicao(){
+    return posicao;   
+}
+
+float Diretor::getSalario(){
+    return salario;
+}
+
+std::string Diretor::getAreaSupervisao(){
+    return areaSupervisao;
+}
+
+std::string Diretor::getAreaFormacao(){
+    return areaFormacao;
+}
+
+void Diretor::setCodigo(int code){
+    codigo = code;
+}
+
+void Diretor::setNome(std::string name){
+    nome = name;
+}
+
+void Diretor::setEndereco(std::string adress){
+    endereco = adress;
+}
+
+void Diretor::setTelefone(int phone){
+    telefone = phone;
+}
+
+void Diretor::setDataDia(int day){
+    dataDia = day;
+}
+
+void Diretor::setDataMes(int month){
+    dataMes = month;
+}
+
+void Diretor::setDataAno(int year){
+    dataAno = year;
+}
+
+void Diretor::setTipoFuncionario(int functionaryType){
+    tipoFuncionario = functionaryType;
+}
+    
+void Diretor::setPosicao(std::string position){
+    posicao = position;
+}
+
+void Diretor::setSalario(float salary){
+    salario = salary;
+}
+
+void Diretor::setAreaSupervisao(std::string supervisionArea){
+    areaSupervisao = supervisionArea;
+}
+
+void Diretor::setAreaFormacao(std::string academicWorkfield){
+    areaFormacao = academicWorkfield;
+}
+
+#include <string>
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+Gerenciador::Gerenciador(){
+  
+}
+
+Gerenciador::~Gerenciador(){
+  
+}
+
+// Para cadastrar um novo funcionário, o cargo é solicitado e em seguida as informações do tipo nome, endereço e data de ingresso, entre outras, são lidas
+//pelo programa e armazenadas 
+int Gerenciador::adicionarFuncionario(){
+    int codigoFuncionario, dia, mes, ano;
+    string nome, endereco, telefone, areaSupervisao, areaFormacao, areaAcademicaMax;
+    float salario;
+    short int tipo;
+    
+    cout << "Que tipo de funcionário gostaria de adicionar?\n"
+    << "1. Operador\n"
+    << "2. Gerente\n"
+    << "3. Diretor\n"
+    << "4. Presidente\n";
+
+    cin >> tipo;
+    cin.ignore();
+    
+    cout << "Digite o código do funcionário: ";
+    cin >> codigoFuncionario;
+    cin.ignore();
+    
+    cout << "Digite o nome do funcionário: ";
+    getline(cin, nome);
+    
+    cout << "Digite o endereço do funcionário: ";
+    getline(cin, endereco);
+    
+    cout << "Digite o dia de ingresso do funcionário na empresa: ";
+    cin >> dia;
+    cin.ignore();
+    
+    cout << "Digite o mês de ingresso do funcionário na empresa: ";
+    cin >> mes;
+    cin.ignore();
+    
+    cout << "Digite o ano de ingresso do funcionário na empresa: ";
+    cin >> ano;
+    cin.ignore();
+    
+    cout << "Digite o telefone do funcionário: ";
+    getline(cin, telefone);
+  
+    cout << "Digite o salário do funcionário: ";
+    cin >> salario;
+    cin.ignore();
+    
+  // A seguir, os cargos "Gerente", "Diretor" e "Presidente" recebem adições específicas relacionadas às suas funções. Os dois primeiros 
+  //recebem a área de supervisão, os dois últimos recebem área de formação e "Presidente" recebe a formação academica
+    switch(tipo){
+        case 1:
+        vectorFuncionarios.push_back(new Operador(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Operador", salario));
+        break;
+        case 2:
+        cout << "Digite a área de supervisão do gerente: ";
+        getline(cin, areaSupervisao);
+
+        vectorFuncionarios.push_back(new Gerente(codigoFuncionario, nome, endereco, dia, mes, ano, "Gerente", telefone, salario, areaSupervisao));
+        break;
+        case 3:
+        cout << "Digite a área de supervisão do diretor: ";
+        getline(cin, areaSupervisao);
+        
+        cout << "Digite a área de formação do diretor: ";
+        getline(cin, areaFormacao);
+        
+        vectorFuncionarios.push_back(new Diretor(codigoFuncionario, nome, endereco, dia, mes, ano, "Diretor", telefone, salario, areaSupervisao, areaFormacao));
+        break;
+        case 4:
+        cout << "Digite a área de formação do presidente: ";
+        getline(cin, areaFormacao);
+        
+        cout << "Digite a formação academica máxima do presidente: ";
+        getline(cin, areaAcademicaMax);
+
+        vectorFuncionarios.push_back(new Presidente(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Presidente", salario, areaFormacao, areaAcademicaMax));
+        break;
+        default:
+        cout << "Opção inválida, tente novamente!\n";
+        break;
+    }
+    
+    fstream stream;
+    
+  // Arquivo é aberto e as informações gerais previamente cadastradas são adicionadas
+    stream.open("./listaFuncionario.txt", fstream::out);
+    if(! stream.is_open()){
+      cout << "Erro ao abrir o .txt" << endl; 
+    }
+  
+    for(int c = 0; c < vectorFuncionarios.size(); c++){
+      stream << vectorFuncionarios.at(c)->getCodigo() << endl;
+      stream << vectorFuncionarios.at(c)->getNome() << endl;
+      stream << vectorFuncionarios.at(c)->getEndereco() << endl;
+      stream << vectorFuncionarios.at(c)->getDataDia() << endl;
+      stream << vectorFuncionarios.at(c)->getDataMes() << endl;
+      stream << vectorFuncionarios.at(c)->getDataAno() << endl;
+      stream << vectorFuncionarios.at(c)->getPosicao() << endl;
+      stream << vectorFuncionarios.at(c)->getTelefone() << endl;
+      stream << vectorFuncionarios.at(c)->getSalario() << endl;
+      
+      // Em seguida, as informações específicas por cargo são adicionadas
+      switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+        case 1:
+          break;
+        case 2:
+          stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+          break;
+        case 3:
+          stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+          stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+          break;
+        case 4:
+          stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+          stream << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+          break;
+      }
+      
+    }
+  return 1;
+}
+
+
+int Gerenciador::editarFuncionario(){
+  int codigo, indice, check, opt, dia, mes, ano;
+  string posicao, endereco;
+  float salario;
+  cout << "Existem " << vectorFuncionarios.size() << " funcionários na empresa, digite o código do funcionário para edição: ";
+  cin >> codigo;
+  cin.ignore();
+  
+  // Com o código respectivo ao funcionário em questão, as informações que o usuário pretende editar são reescritas e atualizadas 
+  while(1){
+    for(int c = 0; c < vectorFuncionarios.size(); c++){
+       if(vectorFuncionarios.at(c)->getCodigo() == codigo){
+          indice = c;
+          check++;
+       }
+    }
+    if(check == 0){
+      cout << "código inválido" << endl; 
+    }else{
+      break; 
+    }  
+  }
+  
+  cout << "Editando o funcionário " << codigo << ".\n"
+  << "1. Código: " << endl
+  << "2. Dia de ingresso: " << endl
+  << "3. Mês de ingresso: " << endl
+  << "4. Ano de ingresso: " << endl
+  << "5. Endereço: " << endl
+  << "6. Posição: " << endl
+  << "7. Salário: " << endl;
+  
+  cin >> opt;
+  cin.ignore();
+  
+  // Para cada caso, um dado particular é lido e este passa a ser o dado atual, significando que tal informação foi editada
+  switch(opt){
+    case 1:
+      cout << "Insira o novo código: ";
+      cin >> codigo;
+      cin.ignore();
+      
+      vectorFuncionarios.at(indice)->setCodigo(codigo);
+      cout << "\nEdição Concluída\n";
+      break;
+    case 2:
+      cout << "Insira o novo dia de ingresso: ";
+      cin >> dia;
+      cin.ignore();
+      
+      vectorFuncionarios.at(indice)->setDataDia(dia);
+      cout << "\nEdição Concluída\n";
+      break;
+    case 3:
+      cout << "Insira o novo mês de ingresso: ";
+      cin >> mes;
+      cin.ignore();
+      
+      vectorFuncionarios.at(indice)->setDataMes(mes);
+      cout << "\nEdição Concluída\n";
+      break;
+    case 4:
+      cout << "Insira o novo ano de ingresso: ";
+      cin >> ano;
+      cin.ignore();
+        
+      vectorFuncionarios.at(indice)->setDataAno(ano);
+      cout << "\nEdição Concluída\n";
+      break;
+    case 5:
+      cout << "Insira o novo endereço: ";
+      getline(cin, endereco);
+      
+      vectorFuncionarios.at(indice)->setEndereco(endereco);
+      cout << "\nEdição Concluída\n";
+      break;
+    case 6:{
+      cout << "Insira a nova posição: ";
+      getline(cin, posicao);
+      
+      vectorFuncionarios.at(indice)->setPosicao(posicao);
+      cout << "\nEdição Concluída\n";
+      }break;
+    case 7:{
+      cout << "Insira o novo salário: ";
+      cin >> salario;
+      cin.ignore();
+      
+      vectorFuncionarios.at(indice)->setSalario(salario);
+      cout << "\nEdição Concluída\n";
+      }break;
+  }
+  
+  return 2;
+  }
+  
+
+  
+int Gerenciador::excluirFuncionario(){
+  int codigo, indice, check;
+  string opt;
+  cout << "Existem " << vectorFuncionarios.size() << " funcionários na empresa, digite o código do funcionário para exclusão: ";
+  cin >> codigo;
+
+  for(int c = 0; c < vectorFuncionarios.size(); c++){
+    if(vectorFuncionarios.at(c)->getCodigo() == codigo){
+      indice = c;
+      check++;
+    }if(check == 0){
+      cout << "código inválido" << endl;
+    }else{
+      break;
+    }
+  }
+  
+  for(int c = 0; c < vectorFuncionarios.size(); c++){
+  if(vectorFuncionarios.at(c)->getCodigo() == codigo){
+    cout << "Você deseja excluir o funcionário " << vectorFuncionarios.at(c)->getCodigo() << " - " << vectorFuncionarios.at(c)->getNome() << "? (y/n)";
+    getline(cin, opt);
+  }
+  if(opt == "y"){
+    vectorFuncionarios.erase(vectorFuncionarios.begin() + c);
+    cout << "Funcionário deletado com sucesso!" << endl;
+  }else{
+    cout << "Funcionário não foi deletado!" << endl;
+  }
+}
+return 7;
+}
+
+
+// Um funcionário específico terá seus dados gerais listados em ordem
+int Gerenciador::exibirFuncionario(){
+  int codigo;
+  cout << "Digite o código do funcionário a ser exibido: ";
+  cin >> codigo;
+
+  for(int c = 0; c < vectorFuncionarios.size(); c++){
+    if(vectorFuncionarios.at(c)->getCodigo() == codigo){
+      cout << "\nCódigo do funcionário: "<< vectorFuncionarios.at(c)->getCodigo() << endl
+      << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
+      << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
+      << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl
+      << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" <<     vectorFuncionarios.at(c)->getDataMes() << "/" << vectorFuncionarios.at(c)->getDataAno() << endl
+      << "Posição na empresa: " << vectorFuncionarios.at(c)->getPosicao() << endl
+      << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
+    
+    // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
+      switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+        case 1:
+          break;
+        case 2:
+          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+          break;
+        case 3:
+          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+          break;
+        case 4:
+          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+          cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+          break;
+      }
+  }
+    
+}
+
+return 6;
+}
+
+int Gerenciador::exibirLista(){
+  for(int c = 0; c < vectorFuncionarios.size(); c++){
+    cout << "\nCódigo do funcionário: "<< vectorFuncionarios.at(c)->getCodigo() << endl
+    << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
+    << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
+    << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl
+    << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" << vectorFuncionarios.at(c)->getDataMes() << "/" << vectorFuncionarios.at(c)->getDataAno() << endl
+    << "Posição na empresa: " << vectorFuncionarios.at(c)->getPosicao() << endl
+    << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
+    
+    // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
+    switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+      case 1:
+        break;
+      case 2:
+        cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+        break;
+      case 3:
+        cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+        cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+        break;
+      case 4:
+        cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+        cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+        break;
+    }
+  }
+  
+  return 5;
+}
+
+int Gerenciador::exibirListaTipo(){
+  int tipo;
+  cout << "Insira o tipo de funcionário que gostaria de exibir\n"
+    << "1. Operador\n"
+    << "2. Gerente\n"
+    << "3. Diretor\n"
+    << "4. Presidente\n";
+  cin >> tipo;
+  
+  for(int c = 0; c < vectorFuncionarios.size(); c++){
+    if(vectorFuncionarios.at(c)->getTipoFuncionario() == tipo){
+      cout << "\nCódigo do funcionário: "<< vectorFuncionarios.at(c)->getCodigo() << endl
+      << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
+      << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
+      << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl
+      << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" <<     vectorFuncionarios.at(c)->getDataMes() << "/" << vectorFuncionarios.at(c)->getDataAno() << endl
+      << "Posição na empresa: " << vectorFuncionarios.at(c)->getPosicao() << endl
+      << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
+    
+    // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
+      switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+        case 1:
+          break;
+        case 2:
+          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+          break;
+        case 3:
+          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+          break;
+        case 4:
+          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+          cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+          break;
+      }
+  }
+    
+}
+
+return 4;
+}
+
+
+#include <string>
+    
+Operador::Operador() : Funcionario(){
+        
+}
+
+Operador::Operador(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string telefone ,std::string posicao, float salario){
+    this->codigo = codigoFuncionario;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->telefone = telefone;
+    this->posicao = posicao;
+    this->salario = salario;
+}
+
+Operador::~Operador(){
+    
+}
+
+int Operador::getCodigo(){
+    return codigo;
+}
+
+       
+std::string Operador::getNome(){
+    return nome;
+}
+    
+std::string Operador::getEndereco(){
+    return endereco;
+}
+
+std::string Operador::getTelefone(){
+    return telefone;
+}
+    
+int Operador::getDataDia(){
+    return dataDia;
+}
+    
+int Operador::getDataMes(){
+    return dataMes;
+}
+    
+int Operador::getDataAno(){
+    return dataAno;
+}
+
+int Operador::getTipoFuncionario(){
+    return tipoFuncionario;
+}
+    
+std::string Operador::getPosicao(){
+    return posicao;   
+}
+
+float Operador::getSalario(){
+    return salario;
+}
+  
+void Operador::setCodigo(int code){
+    codigo = code;
+}
+
+void Operador::setNome(std::string name){
+    nome = name;
+}
+
+void Operador::setEndereco(std::string adress){
+    endereco = adress;
+}
+
+void Operador::setTelefone(int phone){
+    telefone = phone;
+}
+
+void Operador::setDataDia(int day){
+    dataDia = day;
+}
+
+void Operador::setDataMes(int month){
+    dataMes = month;
+}
+
+void Operador::setDataAno(int year){
+    dataAno = year;
+}
+
+void Operador::setTipoFuncionario(int functionaryType){
+    tipoFuncionario = functionaryType;
+}
+    
+void Operador::setPosicao(std::string position){
+    posicao = position;   
+}
+
+void Operador::setSalario(float salary){
+    salario = salary;
+}
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello World");
+
+    return 0;
+}
