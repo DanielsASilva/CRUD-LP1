@@ -230,7 +230,7 @@ int Gerenciador::editarFuncionario(){
   
   }
   
-}
+
   
 int Gerenciador::excluirFuncionario(){
   int codigo, indice, check;
