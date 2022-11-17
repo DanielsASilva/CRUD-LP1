@@ -6,6 +6,7 @@
 class Gerente : public Funcionario{
   public:
     Gerente();
+    Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao);
     ~Gerente();
 
     int getCodigo();
@@ -16,19 +17,25 @@ class Gerente : public Funcionario{
     int getDataMes();
     int getDataAno();
     int getTipoFuncionario();
+    std::string getPosicao();
     float getSalario();
     std::string getAreaSupervisao();
+    //td::string getAreaFormacao();
+    //std::string getAreaAcademicaMax();
   
     void setCodigo(int code);
     void setNome(std::string name);
-    void setEndereco(float adress);
+    void setEndereco(std::string adress);
     void setTelefone(int phone);
     void setDataDia(int day);
     void setDataMes(int month);
     void setDataAno(int year);
     void setTipoFuncionario(int functionaryType);
+    void setPosicao(std::string position);
     void setSalario(float salary);
-    void setAreaSupervisao(std::string areaSupervisao);
+    void setAreaSupervisao(std::string supervisionArea);
+    //void setAreaFormacao(std::string academicWorkfield);
+    //void setAreaAcademicaMax(std::string academicDegree); 
   
   protected:
 
@@ -37,6 +44,7 @@ class Gerente : public Funcionario{
     std::string nome;
     std::string endereco;
     std::string telefone;
+    std::string posicao;
     int dataDia;
     int dataMes;
     int dataAno;
