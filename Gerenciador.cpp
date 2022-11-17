@@ -340,7 +340,7 @@ int Gerenciador::exibirListaTipo(){
   cin >> tipo;
   
   for(int c = 0; c < vectorFuncionarios.size(); c++){
-    if(vectorFuncionarios.at(c)->getTipo() == tipo){
+    if(vectorFuncionarios.at(c)->getTipoFuncionario() == tipo){
       cout << "\nCódigo do funcionário: "<< vectorFuncionarios.at(c)->getCodigo() << endl
       << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
       << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
