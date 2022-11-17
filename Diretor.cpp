@@ -5,6 +5,7 @@ Diretor::Diretor() : Gerente(){
         
 }
 
+// cpp padrão com "set" e "get", já considerando os dados adicionais da classe Diretor
 Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao, std::string areaFormacao){
     this->codigo = codigoFuncionario;
     this->nome = nome;
