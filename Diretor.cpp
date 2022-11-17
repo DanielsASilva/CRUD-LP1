@@ -1,9 +1,24 @@
 #include "Diretor.h"
 #include <string>
     
-Diretor::Diretor() : Gerente(){
+Diretor::Diretor() : Funcionario(){
         
 }
+
+// cpp padrão com "set" e "get", já considerando os dados adicionais da classe Diretor
+Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao, std::string areaFormacao){
+    this->codigo = codigoFuncionario;
+    this->nome = nome;
+    this->endereco = endereco;
+    this->dataDia = dia;
+    this->dataMes = mes;
+    this->dataAno = ano;
+    this->posicao = posicao;
+    this->telefone = telefone;
+    this->salario = salario;
+    this->areaSupervisao = areaSupervisao;
+    this->areaFormacao = areaFormacao;
+}    
 
 
 int Diretor::getCodigo(){
@@ -24,26 +39,30 @@ std::string Diretor::getTelefone(){
 }
     
 int Diretor::getDataDia(){
-    return dia;
+    return dataDia;
 }
     
 int Diretor::getDataMes(){
-    return mes;
+    return dataMes;
 }
     
 int Diretor::getDataAno(){
-    return ano;
+    return dataAno;
 }
 
 int Diretor::getTipoFuncionario(){
     return tipoFuncionario;
 }
     
+std::string Diretor::getPosicao(){
+    return posicao;   
+}
+
 float Diretor::getSalario(){
     return salario;
 }
 
-float Diretor::getAreaSupervisao(){
+std::string Diretor::getAreaSupervisao(){
     return areaSupervisao;
 }
 
@@ -59,7 +78,7 @@ void Diretor::setNome(std::string name){
     nome = name;
 }
 
-void Diretor::setEndereco(float adress){
+void Diretor::setEndereco(std::string adress){
     endereco = adress;
 }
 
@@ -68,21 +87,25 @@ void Diretor::setTelefone(int phone){
 }
 
 void Diretor::setDataDia(int day){
-    dia = day;
+    dataDia = day;
 }
 
 void Diretor::setDataMes(int month){
-    mes = month;
+    dataMes = month;
 }
 
 void Diretor::setDataAno(int year){
-    ano = year;
+    dataAno = year;
 }
 
 void Diretor::setTipoFuncionario(int functionaryType){
     tipoFuncionario = functionaryType;
 }
     
+void Diretor::setPosicao(std::string position){
+    posicao = position;
+}
+
 void Diretor::setSalario(float salary){
     salario = salary;
 }
@@ -92,5 +115,5 @@ void Diretor::setAreaSupervisao(std::string supervisionArea){
 }
 
 void Diretor::setAreaFormacao(std::string academicWorkfield){
-    areaFormacao = academicWorkField;
+    areaFormacao = academicWorkfield;
 }
