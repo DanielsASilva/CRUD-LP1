@@ -1,6 +1,8 @@
 #include "Diretor.h"
 #include <string>
     
+
+// As informações gerais dos funcionários serão herdadas para as subclasses, então basta incluir os dados exclusivos
 Diretor::Diretor() : Funcionario(){
         
 }
