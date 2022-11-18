@@ -3,7 +3,7 @@
     
 // Ao herdar as informações gerais de Funcionário, a classe Presidente adiciona apenas um dado novo, que é a formação acadêmica máxima 
 Presidente::Presidente() : Funcionario(){
-        
+    this->tipoFuncionario = 4;
 }
 
 Presidente::Presidente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string telefone, std::string posicao, float salario, std::string areaFormacao, std::string areaAcademicaMax){
@@ -16,6 +16,7 @@ Presidente::Presidente(int codigoFuncionario, std::string nome, std::string ende
     this->posicao = posicao;
     this->telefone = telefone;
     this->salario = salario;
+    this->tipoFuncionario = 4;
     this->areaFormacao = areaFormacao;
     this->areaAcademicaMax = areaAcademicaMax;
 }
