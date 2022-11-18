@@ -14,11 +14,9 @@ class Presidente : public Funcionario{
     void setAreaAcademicaMax(std::string academiDegree);
     void setAreaFormacao(std::string academicWorkfield);
   
-  protected:
-    std::string areaFormacao;
-    std::string areaAcademicaMax;
-  
   private:
+  std::string areaFormacao;
+   std::string areaAcademicaMax;
 
 };
 
