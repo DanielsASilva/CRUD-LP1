@@ -9,7 +9,6 @@ Funcionario::Funcionario(){
     setAno(0);
     setSalario(0);
     setTipoFuncionario(0);
- 
 }
 
 Funcionario::~Funcionario(){
