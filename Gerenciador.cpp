@@ -53,38 +53,36 @@ void Gerenciador::adicionarFuncionario(){
     switch(tipo){
         case 1:
         { //mudança
-        Funcionario *func = new Operador(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Operador", salario);
-        vectorFuncionarios.push_back(func);
+          Funcionario *func = new Operador(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Operador", salario);
+          vectorFuncionarios.push_back(func);
         }
-        break;
+          break;
+        
         case 2:
-        cout << "Digite a área de supervisão do gerente: ";
-        getline(cin, areaSupervisao);
-
-        vectorFuncionarios.push_back(new Gerente(codigoFuncionario, nome, endereco, dia, mes, ano, "Gerente", telefone, salario, areaSupervisao));
-
-  break;
+          cout << "Digite a área de supervisão do gerente: ";
+          getline(cin, areaSupervisao);
+          vectorFuncionarios.push_back(new Gerente(codigoFuncionario, nome, endereco, dia, mes, ano, "Gerente", telefone, salario, areaSupervisao));
+          break;
+        
         case 3:
-        cout << "Digite a área de supervisão do diretor: ";
-        getline(cin, areaSupervisao);
+          cout << "Digite a área de supervisão do diretor: ";
+          getline(cin, areaSupervisao);
+          cout << "Digite a área de formação do diretor: ";
+          getline(cin, areaFormacao);
+          vectorFuncionarios.push_back(new Diretor(codigoFuncionario, nome, endereco, dia, mes, ano, "Diretor", telefone, salario, areaSupervisao, areaFormacao));
+          break;
         
-        cout << "Digite a área de formação do diretor: ";
-        getline(cin, areaFormacao);
-        
-        vectorFuncionarios.push_back(new Diretor(codigoFuncionario, nome, endereco, dia, mes, ano, "Diretor", telefone, salario, areaSupervisao, areaFormacao));
-        break;
         case 4:
-        cout << "Digite a área de formação do presidente: ";
-        getline(cin, areaFormacao);
+          cout << "Digite a área de formação do presidente: ";
+          getline(cin, areaFormacao);
+          cout << "Digite a formação academica máxima do presidente: ";
+          getline(cin, areaAcademicaMax);
+          vectorFuncionarios.push_back(new Presidente(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Presidente", salario, areaFormacao, areaAcademicaMax));
+          break;
         
-        cout << "Digite a formação academica máxima do presidente: ";
-        getline(cin, areaAcademicaMax);
-
-        vectorFuncionarios.push_back(new Presidente(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Presidente", salario, areaFormacao, areaAcademicaMax));
-        break;
         default:
-        cout << "Opção inválida, tente novamente!\n";
-        break;
+          cout << "Opção inválida, tente novamente!\n";
+          break;
     }
     
     fstream stream;
@@ -106,22 +104,22 @@ void Gerenciador::adicionarFuncionario(){
       stream << vectorFuncionarios.at(c)->getTelefone() << endl;
       stream << vectorFuncionarios.at(c)->getSalario() << endl;
       
-      // Em seguida, as informações específicas por cargo são adicionadas
-      switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
-        case 1:
-          break;
-        case 2:
-          stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-          break;
-        case 3:
-          stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-          stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
-          break;
-        case 4:
-          stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
-          stream << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
-          break;
-      }
+        // Em seguida, as informações específicas por cargo são adicionadas
+        switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+          case 1:
+            break;
+          case 2:
+            stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+            break;
+          case 3:
+            stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+            stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+            break;
+          case 4:
+            stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+            stream << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+            break;
+        }
       
     }
   
@@ -136,20 +134,20 @@ void Gerenciador::editarFuncionario(){
   cin >> codigo;
   cin.ignore();
   
-  // Com o código respectivo ao funcionário em questão, as informações que o usuário pretende editar são reescritas e atualizadas 
-  while(1){
-    for(int c = 0; c < vectorFuncionarios.size(); c++){
-       if(vectorFuncionarios.at(c)->getCodigo() == codigo){
-          indice = c;
-          check++;
-       }
+    // Com o código respectivo ao funcionário em questão, as informações que o usuário pretende editar são reescritas e atualizadas 
+    while(1){
+      for(int c = 0; c < vectorFuncionarios.size(); c++){
+         if(vectorFuncionarios.at(c)->getCodigo() == codigo){
+            indice = c;
+            check++;
+         }
+      }
+      if(check == 0){
+        cout << "código inválido" << endl; 
+      }else{
+        break; 
+      }  
     }
-    if(check == 0){
-      cout << "código inválido" << endl; 
-    }else{
-      break; 
-    }  
-  }
   
   cout << "Editando o funcionário " << codigo << ".\n"
   << "1. Código: " << endl
@@ -164,62 +162,61 @@ void Gerenciador::editarFuncionario(){
   cin.ignore();
   
   // Para cada caso, um dado particular é lido e este passa a ser o dado atual, significando que tal informação foi editada
-  switch(opt){
-    case 1:
-      cout << "Insira o novo código: ";
-      cin >> codigo;
-      cin.ignore();
-      
-      vectorFuncionarios.at(indice)->setCodigo(codigo);
-      cout << "\nEdição Concluída\n";
-      break;
-    case 2:
-      cout << "Insira o novo dia de ingresso: ";
-      cin >> dia;
-      cin.ignore();
-      
-      vectorFuncionarios.at(indice)->setDataDia(dia);
-      cout << "\nEdição Concluída\n";
-      break;
-    case 3:
-      cout << "Insira o novo mês de ingresso: ";
-      cin >> mes;
-      cin.ignore();
-      
-      vectorFuncionarios.at(indice)->setDataMes(mes);
-      cout << "\nEdição Concluída\n";
-      break;
-    case 4:
-      cout << "Insira o novo ano de ingresso: ";
-      cin >> ano;
-      cin.ignore();
+    switch(opt){
+      case 1:
+        cout << "Insira o novo código: ";
+        cin >> codigo;
+        cin.ignore();
+        vectorFuncionarios.at(indice)->setCodigo(codigo);
+        cout << "\nEdição Concluída\n";
+        break;
         
-      vectorFuncionarios.at(indice)->setDataAno(ano);
-      cout << "\nEdição Concluída\n";
-      break;
-    case 5:
-      cout << "Insira o novo endereço: ";
-      getline(cin, endereco);
-      
-      vectorFuncionarios.at(indice)->setEndereco(endereco);
-      cout << "\nEdição Concluída\n";
-      break;
-    case 6:{
-      cout << "Insira a nova posição: ";
-      getline(cin, posicao);
-      
-      vectorFuncionarios.at(indice)->setPosicao(posicao);
-      cout << "\nEdição Concluída\n";
-      }break;
-    case 7:{
-      cout << "Insira o novo salário: ";
-      cin >> salario;
-      cin.ignore();
-      
-      vectorFuncionarios.at(indice)->setSalario(salario);
-      cout << "\nEdição Concluída\n";
-      }break;
-  }
+      case 2:
+        cout << "Insira o novo dia de ingresso: ";
+        cin >> dia;
+        cin.ignore();
+        vectorFuncionarios.at(indice)->setDataDia(dia);
+        cout << "\nEdição Concluída\n";
+        break;
+        
+      case 3:
+        cout << "Insira o novo mês de ingresso: ";
+        cin >> mes;
+        cin.ignore();
+        vectorFuncionarios.at(indice)->setDataMes(mes);
+        cout << "\nEdição Concluída\n";
+        break;
+        
+      case 4:
+        cout << "Insira o novo ano de ingresso: ";
+        cin >> ano;
+        cin.ignore();
+        vectorFuncionarios.at(indice)->setDataAno(ano);
+        cout << "\nEdição Concluída\n";
+        break;
+        
+      case 5:
+        cout << "Insira o novo endereço: ";
+        getline(cin, endereco);
+        vectorFuncionarios.at(indice)->setEndereco(endereco);
+        cout << "\nEdição Concluída\n";
+        break;
+        
+      case 6:
+        cout << "Insira a nova posição: ";
+        getline(cin, posicao);
+        vectorFuncionarios.at(indice)->setPosicao(posicao);
+        cout << "\nEdição Concluída\n";
+        break;
+        
+      case 7:
+        cout << "Insira o novo salário: ";
+        cin >> salario;
+        cin.ignore();
+        vectorFuncionarios.at(indice)->setSalario(salario);
+        cout << "\nEdição Concluída\n";
+        break;
+    }
   
   
   }
@@ -232,31 +229,52 @@ void Gerenciador::excluirFuncionario(){
   cout << "Existem " << vectorFuncionarios.size() << " funcionários na empresa, digite o código do funcionário para exclusão: ";
   cin >> codigo;
 
-  for(int c = 0; c < vectorFuncionarios.size(); c++){
-    if(vectorFuncionarios.at(c)->getCodigo() == codigo){
-      indice = c;
-      check++;
-    }if(check == 0){
-      cout << "código inválido" << endl;
-    }else{
-      break;
+    for(int c = 0; c < vectorFuncionarios.size(); c++){
+      if(vectorFuncionarios.at(c)->getCodigo() == codigo){
+        indice = c;
+        check++;
+      }if(check == 0){
+        cout << "código inválido" << endl;
+      }else{
+        break;
+      }
     }
-  }
 
-  for(int c = 0; c < vectorFuncionarios.size(); c++){
-  if(vectorFuncionarios.at(c)->getCodigo() == codigo){
-    cout << "Você deseja excluir o funcionário " << vectorFuncionarios.at(c)->getCodigo() << " - " << vectorFuncionarios.at(c)->getNome() << "? (y/n)";
-    getline(cin, opt);
-  }
-  if(opt == "y"){
-    vectorFuncionarios.erase(vectorFuncionarios.begin() + c);
-    cout << "Funcionário deletado com sucesso!" << endl;
-  }else{
-    cout << "Funcionário não foi deletado!" << endl;
-  }
-}
+for(int c = 0; c < vectorFuncionarios.size(); c++){
+      if(vectorFuncionarios.at(c)->getCodigo() == codigo){
+        cout << "Você deseja excluir o funcionário " << vectorFuncionarios.at(c)->getCodigo() << " - " << vectorFuncionarios.at(c)->getNome() << "? (y/n)";
+        getline(cin, opt);
+      }
+      if(opt == "y"){
+        vectorFuncionarios.erase(vectorFuncionarios.begin() + c);
+        cout << "Funcionário deletado com sucesso!" << endl;
+      }else{
+        cout << "Funcionário não foi deletado!" << endl;
+      }
+    }
   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
