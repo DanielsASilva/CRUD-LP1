@@ -42,7 +42,7 @@ class Diretor : public Funcionario{
   protected:
 
   private:
-    int codigo;
+    /**int codigo;
     std::string nome;
     std::string endereco;
     std::string telefone;
@@ -50,7 +50,7 @@ class Diretor : public Funcionario{
     int dataDia;
     int dataMes;
     int dataAno;
-    int tipoFuncionario;
+    int tipoFuncionario; **/
   
     std::string areaSupervisao;
     
