@@ -52,10 +52,9 @@ void Gerenciador::adicionarFuncionario(){
   //recebem a área de supervisão, os dois últimos recebem área de formação e "Presidente" recebe a formação academica
     switch(tipo){
         case 1:
-        { //mudança
+          //mudança
           Funcionario *func = new Operador(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Operador", salario);
           vectorFuncionarios.push_back(func);
-        }
           break;
         
         case 2:
@@ -255,29 +254,6 @@ for(int c = 0; c < vectorFuncionarios.size(); c++){
   
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Um funcionário específico terá seus dados gerais listados em ordem
 void Gerenciador::exibirFuncionario(){
   int codigo;
@@ -290,29 +266,34 @@ void Gerenciador::exibirFuncionario(){
       << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
       << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
       << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl
-      << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" <<     vectorFuncionarios.at(c)->getDataMes() << "/" << vectorFuncionarios.at(c)->getDataAno() << endl
+      << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" 
+        << vectorFuncionarios.at(c)->getDataMes() << "/" 
+        << vectorFuncionarios.at(c)->getDataAno() << endl
       << "Posição na empresa: " << vectorFuncionarios.at(c)->getPosicao() << endl
       << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
     
-    // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
-      switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
-        case 1:
-          break;
-        case 2:
-          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-          break;
-        case 3:
-          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
-          break;
-        case 4:
-          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
-          cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
-          break;
-      }
+      // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
+        switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+          case 1:
+            break;
+            
+          case 2:
+            cout << "Área de supervisão: " << ((Gerente*)vectorFuncionarios.at(c))->getAreaSupervisao() << endl;
+            break;
+            
+          case 3:
+            cout << "Área de supervisão: " << ((Diretor*)vectorFuncionarios.at(c))->getAreaSupervisao() << endl;
+            cout << "Área de formação: " << ((Diretor*)vectorFuncionarios.at(c))->getAreaFormacao() << endl;
+            break;
+            
+          case 4:
+            cout << "Área de formação: " << ((Presidente*)vectorFuncionarios.at(c))->getAreaFormacao() << endl;
+            cout << "Área de formação acadêmica máxima: " << ((Presidente*)vectorFuncionarios.at(c))->getAreaAcademicaMax() << endl;
+            break;
+        }
+    }
+
   }
-    
-}
 
 }
 
@@ -322,7 +303,9 @@ void Gerenciador::exibirLista(){
     << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
     << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
     << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl
-    << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" << vectorFuncionarios.at(c)->getDataMes() << "/" << vectorFuncionarios.at(c)->getDataAno() << endl
+    << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" 
+      << vectorFuncionarios.at(c)->getDataMes() << "/" 
+      << vectorFuncionarios.at(c)->getDataAno() << endl
     << "Posição na empresa: " << vectorFuncionarios.at(c)->getPosicao() << endl
     << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
     
@@ -330,13 +313,16 @@ void Gerenciador::exibirLista(){
     switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
       case 1:
         break;
+        
       case 2:
         cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
         break;
+        
       case 3:
         cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
         cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
         break;
+        
       case 4:
         cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
         cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
@@ -361,28 +347,33 @@ void Gerenciador::exibirListaTipo(){
       << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
       << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
       << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl
-      << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" <<     vectorFuncionarios.at(c)->getDataMes() << "/" << vectorFuncionarios.at(c)->getDataAno() << endl
+      << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" 
+        << vectorFuncionarios.at(c)->getDataMes() << "/" 
+        << vectorFuncionarios.at(c)->getDataAno() << endl
       << "Posição na empresa: " << vectorFuncionarios.at(c)->getPosicao() << endl
       << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
     
     // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
-      switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
-        case 1:
-          break;
-        case 2:
-          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-          break;
-        case 3:
-          cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
-          break;
-        case 4:
-          cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
-          cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
-          break;
-      }
-  }
+        switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+          case 1:
+            break;
+
+          case 2:
+            cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+            break;
+
+          case 3:
+            cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+            cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+            break;
+
+          case 4:
+            cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+            cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+            break;
+        }
+    }
     
-}
+  }
 
 }
