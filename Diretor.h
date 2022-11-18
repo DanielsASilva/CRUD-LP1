@@ -14,10 +14,11 @@ class Diretor : public Funcionario{
     std::string getAreaFormacao();
     void setAreaSupervisao(std::string supervisionArea);
     void setAreaFormacao(std::string academicWorkfield);
-
-  private:
+  
+  protected:
     std::string areaSupervisao;
     std::string areaFormacao;
+
 };
 
 #endif
