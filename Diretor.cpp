@@ -4,7 +4,7 @@
 
 // As informações gerais dos funcionários serão herdadas para as subclasses, então basta incluir os dados exclusivos
 Diretor::Diretor() : Funcionario(){
-        
+    this->tipoFuncionario = 3;
 }
 
 // cpp padrão com "set" e "get", já considerando os dados adicionais da classe Diretor
@@ -18,6 +18,7 @@ Diretor::Diretor(int codigoFuncionario, std::string nome, std::string endereco, 
     this->posicao = posicao;
     this->telefone = telefone;
     this->salario = salario;
+    this->tipoFuncionario = 3;
     this->areaSupervisao = areaSupervisao;
     this->areaFormacao = areaFormacao;
 }    
