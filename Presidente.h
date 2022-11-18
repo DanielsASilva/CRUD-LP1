@@ -16,7 +16,7 @@ class Presidente : public Funcionario{
   
   private:
   std::string areaFormacao;
-   std::string areaAcademicaMax;
+  std::string areaAcademicaMax;
 
 };
 
