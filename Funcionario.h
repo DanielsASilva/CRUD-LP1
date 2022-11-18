@@ -17,9 +17,6 @@ class Funcionario{
     int getTipoFuncionario();
     std::string getPosicao();
     float getSalario();
-    //std::string getAreaSupervisao(); //Gerente
-    //std::string getAreaFormacao(); //Diretor: nome da área de supervisão e área de formação
-    //std::string getAreaAcademicaMax(); //Presidente: área de formação e qual formação acadêmica máxima
   
     void setCodigo(int code);
     void setNome(std::string name);
@@ -31,9 +28,6 @@ class Funcionario{
     void setTipoFuncionario(int functionaryType);
     void setPosicao(std::string position);
     void setSalario(float salary);
-    //void setAreaSupervisao(std::string supervisionArea);
-    //void setAreaFormacao(std::string academicWorkfield);
-    //void setAreaAcademicaMax(std::string academicDegree);
   
   protected:
     int codigo;
@@ -46,10 +40,6 @@ class Funcionario{
     int dataAno;
     int tipoFuncionario;
     float salario;
-    //std::string areaSupervisao;
-    //std::string areaFormacao;
-    //std::string areaAcademicaMax;
-  private:
 
 };
 
