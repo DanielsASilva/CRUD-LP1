@@ -1,6 +1,14 @@
 #include "Funcionario.h"
 
+// Conjunto de gets e sets da superclasse Funcionario. O construtor "Funcionario()" irá inicializar os valores dos atributos
+//que não são strings com zero.
 Funcionario::Funcionario(){
+    setCodigo(0);
+    setDia(0);
+    setMes(0);
+    setAno(0);
+    setSalario(0);
+    setTipoFuncionario(0);
  
 }
 
@@ -49,18 +57,6 @@ float Funcionario::getSalario(){
     return salario;
 }
 
-std::string Funcionario::getAreaSupervisao(){
-    return areaSupervisao;
-}
-
-std::string Funcionario::getAreaFormacao(){
-    return areaFormacao;
-}
-
-std::string Funcionario::getAreaAcademicaMax(){
-    return areaAcademicaMax;
-}
-
 void Funcionario::setCodigo(int code){
     codigo = code;
 }
@@ -99,16 +95,4 @@ void Funcionario::setPosicao(std::string position){
 
 void Funcionario::setSalario(float salary){
     salario = salary;
-}
-
-void Funcionario::setAreaSupervisao(std::string supervisionArea){
-    areaSupervisao = supervisionArea;
-}
-
-void Funcionario::setAreaFormacao(std::string academicWorkfield){
-    areaFormacao = academicWorkfield;
-}
-
-void Funcionario::setAreaAcademicaMax(std::string academicDegree){
-    areaAcademicaMax = academicDegree;
 }
