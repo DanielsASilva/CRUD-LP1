@@ -4,7 +4,7 @@
 
 // Subclasse Gerente herda da superclasse Funcionario, então aqui só serão escritos os dados específicos
 Gerente::Gerente() : Funcionario(){
-        
+    this->tipoFuncionario = 2;
 }
 
 Gerente::Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao){
@@ -17,6 +17,7 @@ Gerente::Gerente(int codigoFuncionario, std::string nome, std::string endereco, 
     this->posicao = posicao;
     this->telefone = telefone;
     this->salario = salario;
+    this->tipoFuncionario = 2;
     this->areaSupervisao = areaSupervisao;
  }
 
