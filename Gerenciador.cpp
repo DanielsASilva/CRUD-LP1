@@ -131,7 +131,7 @@ void Gerenciador::adicionarFuncionario(){
         }
       stream << "-------------------------------------------------------------\n";
     }
-   stream.close()
+   stream.close();
 }
 
 // Para editar um funcionário, o programa deve primeiro conferir se tal cadastro existe e daí prosseguir para a edição
