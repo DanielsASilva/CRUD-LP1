@@ -2,7 +2,7 @@
 #include <string>
     
 
-// Subclasse Gerente herda da superclasse Funcionario, então aqui só serão escritos os dados específicos
+// Subclasse Gerente herda da superclasse Funcionario, então aqui só será escrito o dado específico da Area de Supervisão
 Gerente::Gerente() : Funcionario(){
     this->tipoFuncionario = 2;
 }
