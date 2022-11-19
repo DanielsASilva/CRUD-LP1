@@ -93,15 +93,15 @@ void Gerenciador::adicionarFuncionario(){
     }
   
     for(int c = 0; c < vectorFuncionarios.size(); c++){
-      stream << vectorFuncionarios.at(c)->getCodigo() << endl;
-      stream << vectorFuncionarios.at(c)->getNome() << endl;
-      stream << vectorFuncionarios.at(c)->getEndereco() << endl;
-      stream << vectorFuncionarios.at(c)->getDataDia() << endl;
-      stream << vectorFuncionarios.at(c)->getDataMes() << endl;
-      stream << vectorFuncionarios.at(c)->getDataAno() << endl;
-      stream << vectorFuncionarios.at(c)->getPosicao() << endl;
-      stream << vectorFuncionarios.at(c)->getTelefone() << endl;
-      stream << vectorFuncionarios.at(c)->getSalario() << endl;
+      stream << "Codigo: " << vectorFuncionarios.at(c)->getCodigo() << endl;
+      stream << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl;
+      stream << "Endereço: " << vectorFuncionarios.at(c)->getEndereco() << endl;
+      stream << "Dia: " << vectorFuncionarios.at(c)->getDataDia() << endl;
+      stream << "Mês: " << vectorFuncionarios.at(c)->getDataMes() << endl;
+      stream << "Ano: " << vectorFuncionarios.at(c)->getDataAno() << endl;
+      stream << "Posição: " << vectorFuncionarios.at(c)->getPosicao() << endl;
+      stream << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl;
+      stream << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
       
         // Em seguida, as informações específicas por cargo são adicionadas
         switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
@@ -121,10 +121,10 @@ void Gerenciador::adicionarFuncionario(){
         }
       
     }
-  
+   stream.close()
 }
 
-
+// Para editar um funcionário, o programa deve primeiro conferir se tal cadastro existe e daí prosseguir para a edição
 void Gerenciador::editarFuncionario(){
   int codigo, indice, check, opt, dia, mes, ano;
   string posicao, endereco;
