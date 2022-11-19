@@ -21,6 +21,7 @@ class Gerenciador {
   void exibirFuncionario();
   void exibirLista();
   void exibirListaTipo();
+  void limpaArquivo();
   
   // Sem herança, o vetor-atributo estará como "private"
   private:
