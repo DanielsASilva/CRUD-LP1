@@ -126,7 +126,7 @@ void Gerenciador::adicionarFuncionario(){
             break;
           case 4:
             stream << ((Presidente*)vectorFuncionarios.at(c))->getAreaFormacao() << endl;
-            stream << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+            stream << ((Presidente*)vectorFuncionarios.at(c))->getAreaAcademicaMax() << endl;
             break;
         }
       stream << "-------------------------------------------------------------\n";
@@ -324,17 +324,17 @@ void Gerenciador::exibirLista(){
         break;
         
       case 2:
-        cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+        cout << "Área de supervisão: " << ((Gerente*)vectorFuncionarios.at(c))->getAreaSupervisao() << endl;
         break;
         
       case 3:
-        cout << "Área de supervisão: " << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-        cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+        cout << "Área de supervisão: " << ((Diretor*)vectorFuncionarios.at(c))->getAreaSupervisao() << endl;
+        cout << "Área de formação: " << ((Diretor*)vectorFuncionarios.at(c))->getAreaFormacao() << endl;
         break;
         
       case 4:
-        cout << "Área de formação: " << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
-        cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
+        cout << "Área de formação: " << ((Presidente*)vectorFuncionarios.at(c))->getAreaFormacao() << endl;
+        cout << "Área de formação acadêmica máxima: " << ((Presidente*)vectorFuncionarios.at(c))->getAreaAcademicaMax() << endl;
         break;
     }
     cout << '\n';
