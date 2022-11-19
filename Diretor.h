@@ -15,7 +15,7 @@ class Diretor : public Funcionario{
     void setAreaSupervisao(std::string supervisionArea);
     void setAreaFormacao(std::string academicWorkfield);
   
-  protected:
+  private:
     std::string areaSupervisao;
     std::string areaFormacao;
 
