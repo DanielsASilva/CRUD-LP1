@@ -3,6 +3,7 @@
 #include <string>
 #include "Funcionario.h"
 
+// Na classe Presidente, os atributos da Area de Formação e da Formação Acadêmica, exclusivos desta classe, são instanciados 
 class Presidente : public Funcionario{
   public:
     Presidente();
@@ -17,7 +18,6 @@ class Presidente : public Funcionario{
   private:
   std::string areaFormacao;
   std::string areaAcademicaMax;
-
 };
 
 #endif
