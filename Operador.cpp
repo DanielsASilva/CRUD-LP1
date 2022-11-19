@@ -1,7 +1,7 @@
 #include "Operador.h"
 #include <string>
     
-// Como Operador herda todas as informações de Funcionário e não adiciona nenhum dado novo, não há necessidade de repetir os gets e sets
+// Como Operador herda todas as informações de Funcionário e não adiciona nenhum atributo novo, não há necessidade de repetir os gets e sets
 Operador::Operador() : Funcionario(){
     this->tipoFuncionario = 1;
 }
