@@ -11,6 +11,7 @@ Funcionario::Funcionario(){
     setTipoFuncionario(0);
 }
 
+// Não é necessário implementar o destrutor porque a remoção de ujm funcionário ocorrerá no arquivo
 Funcionario::~Funcionario(){
 
 }
