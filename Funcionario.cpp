@@ -11,7 +11,7 @@ Funcionario::Funcionario(){
     setTipoFuncionario(0);
 }
 
-// Não é necessário implementar o destrutor porque a remoção de ujm funcionário ocorrerá no arquivo
+// Não é necessário implementar o destrutor porque a remoção de um funcionário ocorrerá no arquivo
 Funcionario::~Funcionario(){
 
 }
@@ -20,7 +20,6 @@ int Funcionario::getCodigo(){
     return codigo;
 }
 
-       
 std::string Funcionario::getNome(){
     return nome;
 }
