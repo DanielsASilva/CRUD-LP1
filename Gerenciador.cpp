@@ -6,11 +6,9 @@
 using namespace std;
 
 Gerenciador::Gerenciador(){
-
 }
 
 Gerenciador::~Gerenciador(){
-  
 }
 
 // Para cadastrar um novo funcionário, o cargo é solicitado e em seguida as informações do tipo nome, endereço e data de ingresso, entre outras, são lidas
@@ -90,8 +88,10 @@ void Gerenciador::adicionarFuncionario(){
     stream.open("./listaFuncionario.txt", fstream::in);
     if(! stream.is_open()){
       cout << "Erro ao abrir o .txt" << endl; 
+      return; // Volta ao menu principal;
     }
   
+  stream << "-------------------------------------------------------------\n";
     for(int c = 0; c < vectorFuncionarios.size(); c++){
       stream << "Codigo: " << vectorFuncionarios.at(c)->getCodigo() << endl;
       stream << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl;
@@ -119,7 +119,7 @@ void Gerenciador::adicionarFuncionario(){
             stream << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
             break;
         }
-      
+      stream << "-------------------------------------------------------------\n";
     }
    stream.close()
 }
@@ -216,11 +216,7 @@ void Gerenciador::editarFuncionario(){
         cout << "\nEdição Concluída\n";
         break;
     }
-  
-  
   }
-  
-
   
 void Gerenciador::excluirFuncionario(){
   int codigo, indice, check;
@@ -251,7 +247,6 @@ for(int c = 0; c < vectorFuncionarios.size(); c++){
         cout << "Funcionário não foi deletado!" << endl;
       }
     }
-  
 }
 
 // Um funcionário específico terá seus dados gerais listados em ordem
@@ -292,9 +287,7 @@ void Gerenciador::exibirFuncionario(){
             break;
         }
     }
-
   }
-
 }
 
 void Gerenciador::exibirLista(){
@@ -328,8 +321,8 @@ void Gerenciador::exibirLista(){
         cout << "Área de formação acadêmica máxima: " << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
         break;
     }
+    cout << '\n';
   }
-  
 }
 
 void Gerenciador::exibirListaTipo(){
@@ -373,7 +366,5 @@ void Gerenciador::exibirListaTipo(){
             break;
         }
     }
-    
   }
-
 }
