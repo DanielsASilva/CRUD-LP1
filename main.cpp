@@ -16,6 +16,7 @@ int main(){
   
   Gerenciador gerenciador;
   
+  while(true){
   // Exibe o menu principal com as opções de ação
   cout << "          SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS" << endl;
   cout << "               1. Adicionar Funcionário\n"
@@ -63,6 +64,7 @@ int main(){
     case 7: 
       gerenciador.limpaArquivo();
       break;
+  }
   }
   
   return 0;
