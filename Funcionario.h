@@ -2,6 +2,7 @@
 #define FUNCIONARIO_H
 #include <string>
 
+// Superclasse! É aqui que todas as informações gerais dos funcionários serão instanciadas 
 class Funcionario{
   public:
     Funcionario();
@@ -29,6 +30,7 @@ class Funcionario{
     void setPosicao(std::string position);
     void setSalario(float salary);
   
+  // Os atributos estarão como "protected" porque serão herdados pelas subclasses
   protected:
     int codigo;
     std::string posicao;
