@@ -118,14 +118,14 @@ void Gerenciador::adicionarFuncionario(){
           case 1:
             break;
           case 2:
-            stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
+            stream << ((Gerente*)vectorFuncionarios.at(c))->getAreaSupervisao() << endl;
             break;
           case 3:
-            stream << vectorFuncionarios.at(c)->getAreaSupervisao() << endl;
-            stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+            stream << ((Diretor*)vectorFuncionarios.at(c))->getAreaSupervisao() << endl;
+            stream << ((Diretor*)vectorFuncionarios.at(c))->getAreaFormacao() << endl;
             break;
           case 4:
-            stream << vectorFuncionarios.at(c)->getAreaFormacao() << endl;
+            stream << ((Presidente*)vectorFuncionarios.at(c))->getAreaFormacao() << endl;
             stream << vectorFuncionarios.at(c)->getAreaAcademicaMax() << endl;
             break;
         }
