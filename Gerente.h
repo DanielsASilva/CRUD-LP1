@@ -3,6 +3,7 @@
 #include <string>
 #include "Funcionario.h"
 
+// Herdando de Funcionario, a classe Gerente irá adicionar apenas a informação da Area de Supervisão
 class Gerente : public Funcionario{
   public:
     Gerente();
