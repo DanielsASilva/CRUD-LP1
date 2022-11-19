@@ -7,6 +7,7 @@
 #include "Presidente.h"
 #include <vector>
 
+// Classe que instancia as funções que operam os dados dos funcionários, como edição e remoção
 class Gerenciador {
   public:
   Gerenciador();
@@ -21,8 +22,7 @@ class Gerenciador {
   void exibirLista();
   void exibirListaTipo();
   
-  protected:
-  
+  // Sem herança, o vetor-atributo estará como "private"
   private:
   std::vector<Funcionario*> vectorFuncionarios;
 };
