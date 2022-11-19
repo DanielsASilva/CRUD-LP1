@@ -37,20 +37,30 @@ void Gerenciador::adicionarFuncionario(){
     
     cout << "Digite o endereço do funcionário: ";
     getline(cin, endereco);
+    
+    cout << "Digite o telefone do funcionário: ";
+    getline(cin, telefone);
 
     cout << "Digite o dia de ingresso do funcionário na empresa: ";
     cin >> dia;
     cin.ignore();
     
     cout << "Digite o mês de ingresso do funcionário: ";
-    cin >> salario;
+    cin >> mes;
+    cin.ignore();
+    
+    cout << "Digite o ano de ingresso do funcionário: ";
+    cin >> ano;
+    cin.ignore();
+    
+    cout << "Digite o salário do funcionário: ";
+    cin >> mes;
     cin.ignore();
     
   // A seguir, os cargos "Gerente", "Diretor" e "Presidente" recebem adições específicas relacionadas às suas funções. Os dois primeiros 
   //recebem a área de supervisão, os dois últimos recebem área de formação e "Presidente" recebe a formação academica
     switch(tipo){
         case 1:
-          //mudança
           Funcionario *func = new Operador(codigoFuncionario, nome, endereco, dia, mes, ano, telefone, "Operador", salario);
           vectorFuncionarios.push_back(func);
           break;
@@ -133,7 +143,7 @@ void Gerenciador::editarFuncionario(){
   cin >> codigo;
   cin.ignore();
   
-    // Com o código respectivo ao funcionário em questão, as informações que o usuário pretende editar são reescritas e atualizadas 
+    // O laço "while" procura o funcionário que possui o código digitado e prossegue com a edição se encontrar
     while(1){
       for(int c = 0; c < vectorFuncionarios.size(); c++){
          if(vectorFuncionarios.at(c)->getCodigo() == codigo){
@@ -148,6 +158,7 @@ void Gerenciador::editarFuncionario(){
       }  
     }
   
+  // Com o código respectivo ao funcionário em questão, as informações que o usuário pretende editar são reescritas e atualizadas 
   cout << "Editando o funcionário " << codigo << ".\n"
   << "1. Código: " << endl
   << "2. Dia de ingresso: " << endl
@@ -218,6 +229,8 @@ void Gerenciador::editarFuncionario(){
     }
   }
   
+// Para excluir um funcionário, primeiramente, é necessário que algum funcionário já esteja cadastrado 
+//e é preciso conferir isso buscando por seu respectivo código
 void Gerenciador::excluirFuncionario(){
   int codigo, indice, check;
   string opt;
@@ -235,6 +248,7 @@ void Gerenciador::excluirFuncionario(){
       }
     }
 
+// Uma vez que um funcionário foi escolhido para ter seu cadastro deletado, a função "erase" irá apagar seu registro
 for(int c = 0; c < vectorFuncionarios.size(); c++){
       if(vectorFuncionarios.at(c)->getCodigo() == codigo){
         cout << "Você deseja excluir o funcionário " << vectorFuncionarios.at(c)->getCodigo() << " - " << vectorFuncionarios.at(c)->getNome() << "? (y/n)";
@@ -255,6 +269,7 @@ void Gerenciador::exibirFuncionario(){
   cout << "Digite o código do funcionário a ser exibido: ";
   cin >> codigo;
 
+  // O "for" vasculha cada o código digitado e exibe o funcionário respectivo com seus dados gerais e particulares, se houverem
   for(int c = 0; c < vectorFuncionarios.size(); c++){
     if(vectorFuncionarios.at(c)->getCodigo() == codigo){
       cout << "\nCódigo do funcionário: "<< vectorFuncionarios.at(c)->getCodigo() << endl
@@ -268,7 +283,7 @@ void Gerenciador::exibirFuncionario(){
       << "Salario: " << vectorFuncionarios.at(c)->getSalario() << endl;
     
       // Caso o funcionário em questão não seja "Operador", seus dados específicos também serão exibidos
-        switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
+       switch(vectorFuncionarios.at(c)->getTipoFuncionario()){
           case 1:
             break;
             
@@ -290,6 +305,7 @@ void Gerenciador::exibirFuncionario(){
   }
 }
 
+// Lista todos os funcionários cadastrados na empresa, independente do cargo
 void Gerenciador::exibirLista(){
   for(int c = 0; c < vectorFuncionarios.size(); c++){
     cout << "\nCódigo do funcionário: "<< vectorFuncionarios.at(c)->getCodigo() << endl
@@ -325,6 +341,7 @@ void Gerenciador::exibirLista(){
   }
 }
 
+// Exibe uma lista com todos os funcionário que pertencem a uma designação pré-especificada pelo usuário
 void Gerenciador::exibirListaTipo(){
   int tipo;
   cout << "Insira o tipo de funcionário que gostaria de exibir\n"
@@ -333,14 +350,16 @@ void Gerenciador::exibirListaTipo(){
     << "3. Diretor\n"
     << "4. Presidente\n";
   cin >> tipo;
-  
+    
+  // O "for" vasculha cada componente da designação e exibe os funcionários com seus respectivos dados
   for(int c = 0; c < vectorFuncionarios.size(); c++){
     if(vectorFuncionarios.at(c)->getTipoFuncionario() == tipo){
       cout << "\nCódigo do funcionário: "<< vectorFuncionarios.at(c)->getCodigo() << endl
       << "Nome: " << vectorFuncionarios.at(c)->getNome() << endl
       << "Endereco: " << vectorFuncionarios.at(c)->getEndereco() << endl
       << "Telefone: " << vectorFuncionarios.at(c)->getTelefone() << endl
-      << "Data de ingresso: " << vectorFuncionarios.at(c)->getDataDia() << "/" 
+      << "Data de ingresso: " 
+        << vectorFuncionarios.at(c)->getDataDia() << "/" 
         << vectorFuncionarios.at(c)->getDataMes() << "/" 
         << vectorFuncionarios.at(c)->getDataAno() << endl
       << "Posição na empresa: " << vectorFuncionarios.at(c)->getPosicao() << endl
@@ -367,4 +386,11 @@ void Gerenciador::exibirListaTipo(){
         }
     }
   }
+}
+
+// Para limpar o arquivo, só realmente abre e fecha sem fazer nada de fato
+void Gerenciador::limpaArquivo(){    
+    ofstream stream;
+    stream.open("listaFuncionario.txt");
+    stream.close();
 }
