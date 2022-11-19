@@ -23,7 +23,7 @@ int main(){
   << "               3. Excluir Funcionário\n"
   << "               4. Exibir Funcionário\n"
   << "               5. Exibir Lista\n"
-  << "               6. Exibir Lista por Tipo\n";
+  << "               6. Exibir Lista por Tipo\n"
   << "               7. Limpar Arquivo\n"
   << "               0. Sair\n";
   
