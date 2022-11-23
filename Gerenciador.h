@@ -7,23 +7,27 @@
 #include "Presidente.h"
 #include <vector>
 
-class Gerenciador{
+// Classe que instancia as funções que operam os dados dos funcionários, como edição e remoção
+class Gerenciador {
   public:
   Gerenciador();
   ~Gerenciador();
   
-  std::vector<Funcionario*> getVectorFuncionarios();
+  //std::vector<Funcionario*> getVectorFuncionarios();
   
-  int adicionarFuncionario();
-  int editarFuncionario();
-  int excluirFuncionario();
-  int exibirFuncionario();
-  int exibirLista();
-  int exibirListaTipo();
-  
-  protected:
-  
+  void adicionarFuncionario();
+  void editarFuncionario();
+  void excluirFuncionario();
+  void exibirFuncionario();
+  void exibirLista();
+  void exibirListaTipo();
+  void limpaArquivo();
+  void importaArquivo();
+  void exportaArquivo();
+  void limparLista();
+  // Sem herança, o vetor-atributo estará como "private"
   private:
+  Funcionario* getFuncPorCodigo(int codigo);
   std::vector<Funcionario*> vectorFuncionarios;
 };
 
