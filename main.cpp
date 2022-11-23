@@ -1,56 +1,89 @@
-#ifndef GERENTE_H
-#define GERENTE_H
+#include <iostream>
 #include <string>
 #include "Funcionario.h"
+#include "Diretor.h"
+#include "Operador.h"
+#include "Gerente.h"
+#include "Presidente.h"
+#include "Gerenciador.h"
 
-class Gerente : public Funcionario{
-  public:
-    Gerente();
-    Gerente(int codigoFuncionario, std::string nome, std::string endereco, int dia, int mes, int ano, std::string posicao, std::string telefone, float salario, std::string areaSupervisao);
-    ~Gerente();
+// Todos os include's estão presentes a fim de permitir a execução das funções 
 
-    int getCodigo();
-    std::string getNome();
-    std::string getEndereco();
-    std::string getTelefone();
-    int getDataDia();
-    int getDataMes();
-    int getDataAno();
-    int getTipoFuncionario();
-    std::string getPosicao();
-    float getSalario();
-    std::string getAreaSupervisao();
-    std::string getAreaFormacao();
-    std::string getAreaAcademicaMax();
+using namespace std;
+
+int main(){
+  int opcao;
   
-    void setCodigo(int code);
-    void setNome(std::string name);
-    void setEndereco(std::string adress);
-    void setTelefone(int phone);
-    void setDataDia(int day);
-    void setDataMes(int month);
-    void setDataAno(int year);
-    void setTipoFuncionario(int functionaryType);
-    void setPosicao(std::string position);
-    void setSalario(float salary);
-    void setAreaSupervisao(std::string supervisionArea);
-    void setAreaFormacao(std::string academicWorkfield);
-    void setAreaAcademicaMax(std::string academicDegree); 
+  Gerenciador gerenciador;
   
-  protected:
+  while(true){
+    // Exibe o menu principal com as opções de ação
+    cout << "          SISTEMA DE GERENCIAMENTO DE FUNCIONÁRIOS" << endl;
+    cout << "               1. Adicionar Funcionário\n"
+    << "               2. Editar Funcionário\n"
+    << "               3. Excluir Funcionário\n"
+    << "               4. Exibir Funcionário\n"
+    << "               5. Exibir Lista\n"
+    << "               6. Exibir Lista por Tipo\n"
+    << "               7. Limpar Lista de Funcionários\n"
+    << "               8. Importar Arquivo\n"
+    << "               9. Exportar Arquivo\n"
+    << "               10. Limpar Arquivo\n"
+    << "               0. Sair\n";
+    
+    cin >> opcao;
+    cin.ignore();
+    
+    if(!opcao){
+      break;
+    }
+    
+    // Para cada opção, uma operação específica é executada. Voltando ao menu principal ao fim do processo
+    switch(opcao){
+      case 1:
+        gerenciador.adicionarFuncionario();
+        break;
+        
+      case 2:
+        gerenciador.editarFuncionario();
+        break;
+        
+      case 3:
+        gerenciador.excluirFuncionario();
+        break;
+        
+      case 4:
+        gerenciador.exibirFuncionario();
+        break;
+        
+      case 5:
+        gerenciador.exibirLista();
+        break;
+        
+      case 6:
+        gerenciador.exibirListaTipo();
+        break;
 
-  private:
-    int codigo;
-    std::string nome;
-    std::string endereco;
-    std::string telefone;
-    std::string posicao;
-    int dataDia;
-    int dataMes;
-    int dataAno;
-    int tipoFuncionario;
-  
-    std::string areaSupervisao;
-};
+      case 7:
+        gerenciador.limparLista();
+        break;
+        
+      case 8: 
+        gerenciador.importaArquivo();
+        break;
 
-#endif
+      case 9:
+        gerenciador.exportaArquivo();
+        break;
+
+      case 10:
+        gerenciador.limpaArquivo();
+        break;
+
+      default:
+        system("cls || clear");
+        break;
+    }
+  }
+  return 0;
+}
