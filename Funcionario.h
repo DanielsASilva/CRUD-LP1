@@ -2,39 +2,35 @@
 #define FUNCIONARIO_H
 #include <string>
 
+// Superclasse! É aqui que todas as informações gerais dos funcionários serão instanciadas 
 class Funcionario{
   public:
     Funcionario();
     ~Funcionario();
 
-    virtual int getCodigo() = 0;
-    virtual std::string getNome() = 0;
-    virtual std::string getEndereco() = 0;
-    virtual std::string getTelefone() = 0;
-    virtual int getDataDia() = 0;
-    virtual int getDataMes() = 0;
-    virtual int getDataAno() = 0;
-    virtual int getTipoFuncionario() = 0;
-    virtual std::string getPosicao() = 0;
-    virtual float getSalario() = 0;
-    virtual std::string getAreaSupervisao() = 0;
-    virtual std::string getAreaFormacao() = 0;
-    virtual std::string getAreaAcademicaMax() = 0;
+    int getCodigo();
+    std::string getNome();
+    std::string getEndereco();
+    std::string getTelefone();
+    int getDataDia();
+    int getDataMes();
+    int getDataAno();
+    int getTipoFuncionario();
+    std::string getPosicao();
+    float getSalario();
   
-    virtual void setCodigo(int code) = 0;
-    virtual void setNome(std::string name) = 0;
-    virtual void setEndereco(std::string adress) = 0;
-    virtual void setTelefone(int phone) = 0;
-    virtual void setDataDia(int day) = 0;
-    virtual void setDataMes(int month) = 0;
-    virtual void setDataAno(int year) = 0;
-    virtual void setTipoFuncionario(int functionaryType) = 0;
-    virtual void setPosicao(std::string position);
-    virtual void setSalario(float salary) = 0;
-    virtual void setAreaSupervisao(std::string supervisionArea) = 0;
-    virtual void setAreaFormacao(std::string academicWorkfield) = 0;
-    virtual void setAreaAcademicaMax(std::string academicDegree) = 0;
+    void setCodigo(int code);
+    void setNome(std::string name);
+    void setEndereco(std::string adress);
+    void setTelefone(std::string phone);
+    void setDataDia(int day);
+    void setDataMes(int month);
+    void setDataAno(int year);
+    void setTipoFuncionario(int functionaryType);
+    void setPosicao(std::string position);
+    void setSalario(float salary);
   
+  // Os atributos estarão como "protected" porque serão herdados pelas subclasses
   protected:
     int codigo;
     std::string posicao;
@@ -46,10 +42,6 @@ class Funcionario{
     int dataAno;
     int tipoFuncionario;
     float salario;
-    std::string areaSupervisao;
-    std::string areaFormacao;
-    std::string areaAcademicaMax;
-  private:
 
 };
 
